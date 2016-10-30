@@ -6,7 +6,7 @@ var config = module.exports = {
   context: __dirname,
   entry: './js_src/entry.js',
   plugins: [
-    new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
+    new ExtractTextPlugin('styles.css')
   ]
 };
 
@@ -36,7 +36,7 @@ config.module = {
     },
     {
       test: /\.css$/,
-      include: path.resolve(__dirname, ''),
+      include: [path.resolve(__dirname, './js_src'), path.resolve(__dirname, './node_modules')],
       loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
     }
   ]
