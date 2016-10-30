@@ -4,3 +4,6 @@ node_modules
 .DS_Store
 npm-debug.log
 /app/assets/javascripts
+.env
+tmp/
+log/*.log

@@ -59,10 +59,10 @@
     "redux-thunk": "^1.0.3"
   },
   "scripts": {
-    "start": "node ./scripts/start.js",
-    "build": "node ./scripts/build.js"
+    "start": "node ./js_scripts/start.js",
+    "build": "node ./js_scripts/build.js"
   },
   "eslintConfig": {
-    "extends": "./config/eslint.js"
+    "extends": "./js_config/eslint.js"
   }
 }
