@@ -1,0 +1,39 @@
+import React, { Component } from 'react';
+import _ from 'lodash';
+import '../../styles/SnippetTagSelection.css';
+
+import SelectableTagItem from './SelectableTagItem';
+
+class SnippetTagSelection extends Component {
+  createTagListItem(tag, idx) {
+    return (
+      <SelectableTagItem
+        key={idx}
+        tag={tag}
+      />
+    );
+  }
+
+  buildSelectableTags() {
+    const tagListItems = _.map(this.props.tags, this.createTagListItem.bind(this));
+    return (
+      <ul className="SnippetTagSelection-list">
+        {tagListItems}
+      </ul>
+    );
+  }
+
+  render() {
+    return (
+      <div className="SnippetTagSelection-container">
+        {this.buildSelectableTags()}
+      </div>
+    );
+  }
+}
+
+SnippetTagSelection.propTypes = {
+  tags: React.PropTypes.object.isRequired
+}
+
+export default SnippetTagSelection

@@ -1,0 +1,16 @@
+.NavHeader-container {
+  background-color: black;
+  color: #fff;
+  padding: 1em 1.3em;
+}
+
+.NavHeader-button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3em;
+  margin: 0 0.4em;
+}

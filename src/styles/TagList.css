@@ -1,0 +1,29 @@
+.TagList-container {
+  background-color: gray;
+  padding: 0.3em 1.3em;
+}
+
+.TagList-list {
+  list-style-type: none;
+}
+
+.TagList-list-item {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3em;
+  margin: 0 0.4em;
+}
+
+.SmallTagList-container {
+}
+
+.SmallTagList-list {
+  list-style-type: none;
+}
+
+.SmallTagList-list-item {
+}

@@ -1,0 +1,6 @@
+const ActionTypes = {
+  SHOW_ADD_SNIPPET_FORM: "SHOW_ADD_SNIPPET_FORM",
+  HIDE_ADD_SNIPPET_FORM: "HIDE_ADD_SNIPPET_FORM"
+}
+
+export default ActionTypes
