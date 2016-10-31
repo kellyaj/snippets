@@ -4,6 +4,12 @@ import '../../styles/SnippetForm.css';
 import SnippetTagSelection from './SnippetTagSelection';
 
 class SnippetForm extends Component {
+
+  submitNewSnippet() {
+    // use refs to pull values from inpts
+    this.props.addSnippetHandler();
+  }
+
   render() {
     return (
       <div className="SnippetForm-container">
@@ -17,6 +23,9 @@ class SnippetForm extends Component {
         <SnippetTagSelection
           tags={this.props.tags}
         />
+        <div onClick={this.submitNewSnippet.bind(this)} className="">
+          Add Snippet
+        </div>
       </div>
     );
   }

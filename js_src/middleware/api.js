@@ -4,7 +4,7 @@ import 'isomorphic-fetch'
 
 export const CALL_API = Symbol('Call API');
 
-const API_ROOT = 'localhost:9949';
+const API_ROOT = 'localhost:3000';
 
 function callApi(endpoint, schema) {
   return fetch(endpoint)

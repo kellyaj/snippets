@@ -7,7 +7,7 @@ class NavHeader extends Component {
       <div className="NavHeader-container">
         <h1>SnippetBoard</h1>
         <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
-          Add Snippet
+          Add New Snippet
         </div>
         <div onClick={this.props.addTagHandler} className="NavHeader-button">
           Add Tag
