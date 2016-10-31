@@ -37,6 +37,7 @@ class SnippetBoard extends Component {
     return (
       <div className="SnippetBoard-container">
         <NavHeader
+          uiData={this.props.uiData}
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.addTagHandler.bind(this)}
         />
