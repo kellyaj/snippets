@@ -1,18 +1,14 @@
 import { CALL_API, Schemas } from '../middleware/api';
-
-const {
-  SHOW_ADD_SNIPPET_FORM,
-  HIDE_ADD_SNIPPET_FORM
-} = require('./ActionTypes');
+import ActionTypes from './ActionTypes';
 
 class ActionCreators {
 
-  showAddSnippetForm() {
-    return { type: SHOW_ADD_SNIPPET_FORM }
-  }
-
-  hideAddSnippetForm() {
-    return { type: HIDE_ADD_SNIPPET_FORM }
+  toggleSnippetForm(showForm) {
+    if(showForm) {
+      return { type: ActionTypes.SHOW_ADD_SNIPPET_FORM };
+    } else {
+      return { type: ActionTypes.HIDE_ADD_SNIPPET_FORM };
+    }
   }
 }
 

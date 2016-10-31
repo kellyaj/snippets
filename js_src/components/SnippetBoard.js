@@ -6,9 +6,13 @@ import TagList from './tag_list/TagList';
 import SnippetList from './snippet_list/SnippetList';
 import SnippetForm from './snippet_form/SnippetForm';
 
+import Store from '../store/Store';
+import ActionCreators from '../actions/ActionCreators';
+
 class SnippetBoard extends Component {
 
   toggleSnippetFormHandler() {
+    return Store.dispatch(ActionCreators.toggleSnippetForm(!this.props.uiData.showAddSnippetForm));
   }
 
   addSnippetHandler() {
