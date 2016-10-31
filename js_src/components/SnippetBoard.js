@@ -17,6 +17,18 @@ class SnippetBoard extends Component {
   addTagHandler() {
   }
 
+  snippetFormContent() {
+    if(this.props.uiData.showAddSnippetForm) {
+      return (
+        <SnippetForm
+          uiData={this.props.uiData}
+          addSnippetHandler={this.addSnippetHandler.bind(this)}
+          tags={this.props.tags}
+        />
+      )
+    }
+  }
+
   render() {
     return (
       <div className="SnippetBoard-container">
@@ -24,11 +36,7 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.addTagHandler.bind(this)}
         />
-        <SnippetForm
-          uiData={this.props.uiData}
-          addSnippetHandler={this.addSnippetHandler.bind(this)}
-          tags={this.props.tags}
-        />
+        { this.snippetFormContent() }
         <TagList
           tags={this.props.tags}
         />
