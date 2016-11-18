@@ -14,9 +14,10 @@ class ActionCreators {
     return {
       type: ActionTypes.ADD_NEW_SNIPPET,
       callApi: true,
-      endpoint: '/snippets/create',
+      endpoint: '/snippets',
       httpMethod: 'POST',
-      data: snippet
+      data: snippet,
+      addNewSnippet: true
     }
   }
 
@@ -25,7 +26,8 @@ class ActionCreators {
       type: ActionTypes.RETRIEVE_SNIPPETS,
       callApi: true,
       endpoint: '/snippets',
-      httpMethod: 'GET'
+      httpMethod: 'GET',
+      retrieveSnippets: true
     }
   }
 }

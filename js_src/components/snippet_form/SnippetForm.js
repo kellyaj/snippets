@@ -7,10 +7,10 @@ import SnippetTagSelection from './SnippetTagSelection'
 class SnippetForm extends Component {
 
   submitNewSnippet() {
-    const descValue = ReactDOM.findDOMNode(this.refs.descInput).value
+    const nameValue = ReactDOM.findDOMNode(this.refs.nameInput).value
     const contentValue = ReactDOM.findDOMNode(this.refs.contentInput).value
     const snippetData = {
-      description: descValue,
+      name: nameValue,
       content: contentValue,
     }
     this.props.addSnippetHandler(snippetData)
@@ -21,7 +21,7 @@ class SnippetForm extends Component {
       <div className="SnippetForm-container">
         <h2>Add Snippet</h2>
         <div className="">
-          Description: <input type="text" ref="descInput"></input>
+          Description: <input type="text" ref="nameInput"></input>
         </div>
         <div className="">
           Command: <input type="text" ref="contentInput"></input>

@@ -1,8 +1,11 @@
 class SnippetsController < ApplicationController
 
+  skip_before_filter :verify_authenticity_token
+
   def index
     snippets = Snippet.all.map do |snippet|
       {
+        :id => snippet.id,
         :name => snippet.name,
         :content => snippet.content
       }
@@ -11,8 +14,7 @@ class SnippetsController < ApplicationController
   end
 
   def create
-  end
-
-  def update
+    snippet = Snippet.create(name: params[:name], content: params[:content])
+    render :json => snippet.to_json
   end
 end
