@@ -15,12 +15,10 @@ class ActionCreators {
   }
 
   retrieveSnippets() {
-    return MyApi.retrieveSnippets().then((response) => {
-      return {
-        type: ActionTypes.RETRIEVE_SNIPPETS,
-        snippetData: response
-      }
-    });;
+    return {
+      type: ActionTypes.RETRIEVE_SNIPPETS,
+      callApi: true
+    }
   }
 }
 

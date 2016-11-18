@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import DevTools from '../containers/DevTools';
 
-import api from '../middleware/api';
+import api from '../middleware/MyApi';
 import rootReducer from '../reducers';
 import InitialState from '../InitialState';
 
@@ -11,7 +11,7 @@ module.exports = createStore(
   rootReducer,
   InitialState,
   compose(
-    applyMiddleware(thunk, createLogger()),
+    applyMiddleware(thunk, api, createLogger()),
     DevTools.instrument()
   )
 )
