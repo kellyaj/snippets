@@ -1,5 +1,4 @@
-import MyApi from '../middleware/MyApi';
-import ActionTypes from './ActionTypes';
+import ActionTypes from './ActionTypes'
 
 class ActionCreators {
 
@@ -11,15 +10,24 @@ class ActionCreators {
     }
   }
 
-  addNewSnippet() {
+  addNewSnippet(snippet) {
+    return {
+      type: ActionTypes.ADD_NEW_SNIPPET,
+      callApi: true,
+      endpoint: '/snippets/create',
+      httpMethod: 'POST',
+      data: snippet
+    }
   }
 
   retrieveSnippets() {
     return {
       type: ActionTypes.RETRIEVE_SNIPPETS,
-      callApi: true
+      callApi: true,
+      endpoint: '/snippets',
+      httpMethod: 'GET'
     }
   }
 }
 
-module.exports = new ActionCreators();
+module.exports = new ActionCreators()

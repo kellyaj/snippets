@@ -3,16 +3,28 @@ import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
 import ActionTypes from '../actions/ActionTypes'
 
-function retrieveSnippets() {
-  return fetch('/snippets')
+function buildOptions(httpMethod, actionData) {
+  if (httpMethod == 'GET') { return {} }
+  return {
+    method: httpMethod,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(actionData)
+  }
+}
+
+function makeRequest(endpoint, httpMethod, actionData) {
+  const options = buildOptions(httpMethod, actionData)
+  return fetch(endpoint, options)
   .then(response =>
     response.json().then(json => ({ json, response }))
   ).then(({ json, response }) => {
       if (!response.ok) {
-        return Promise.reject(json);
+        return Promise.reject(json)
       }
 
-      return camelizeKeys(json);
+      return camelizeKeys(json)
     })
 }
 
@@ -30,7 +42,7 @@ export default store => next => action => {
 
   next(actionWith({ type: ActionTypes.REQUEST_TYPE }))
 
-  return retrieveSnippets().then(
+  return makeRequest(action.endpoint, action.httpMethod, action.data).then(
     response => next(actionWith({
       response,
       type: ActionTypes.SUCCESS_TYPE

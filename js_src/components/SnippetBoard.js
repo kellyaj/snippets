@@ -19,8 +19,8 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.toggleSnippetForm(!this.props.uiData.showAddSnippetForm));
   }
 
-  addSnippetHandler() {
-    return Store.dispatch(ActionCreators.addNewSnippet());
+  addSnippetHandler(snippetData) {
+    return Store.dispatch(ActionCreators.addNewSnippet(snippetData));
   }
 
   addTagHandler() {

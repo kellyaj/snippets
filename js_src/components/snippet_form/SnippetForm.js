@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
-import '../../styles/SnippetForm.css';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import '../../styles/SnippetForm.css'
 
-import SnippetTagSelection from './SnippetTagSelection';
+import SnippetTagSelection from './SnippetTagSelection'
 
 class SnippetForm extends Component {
 
   submitNewSnippet() {
-    // use refs to pull values from inpts
-    this.props.addSnippetHandler();
+    const descValue = ReactDOM.findDOMNode(this.refs.descInput).value
+    const contentValue = ReactDOM.findDOMNode(this.refs.contentInput).value
+    const snippetData = {
+      description: descValue,
+      content: contentValue,
+    }
+    this.props.addSnippetHandler(snippetData)
   }
 
   render() {
@@ -15,10 +21,10 @@ class SnippetForm extends Component {
       <div className="SnippetForm-container">
         <h2>Add Snippet</h2>
         <div className="">
-          Description: <input type="text"></input>
+          Description: <input type="text" ref="descInput"></input>
         </div>
         <div className="">
-          Command: <input type="text"></input>
+          Command: <input type="text" ref="contentInput"></input>
         </div>
         <SnippetTagSelection
           tags={this.props.tags}
