@@ -1,17 +1,5 @@
 const InitialState = {
   snippetsReducer: {
-    45: {
-      id: 45,
-      name: "directory size",
-      content: "du -sh",
-      tags: [223, 951]
-    },
-    841: {
-      id: 841,
-      name: "list tmux sessions",
-      content: "tmux list-sessions",
-      tags: [752]
-    }
   },
   tagsReducer: {
     223: {
