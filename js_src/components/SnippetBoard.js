@@ -11,11 +11,16 @@ import ActionCreators from '../actions/ActionCreators';
 
 class SnippetBoard extends Component {
 
+  componentWillMount() {
+    return Store.dispatch(ActionCreators.retrieveSnippets());
+  }
+
   toggleSnippetFormHandler() {
     return Store.dispatch(ActionCreators.toggleSnippetForm(!this.props.uiData.showAddSnippetForm));
   }
 
   addSnippetHandler() {
+    return Store.dispatch(ActionCreators.addNewSnippet());
   }
 
   addTagHandler() {

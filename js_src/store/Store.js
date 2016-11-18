@@ -11,7 +11,7 @@ module.exports = createStore(
   rootReducer,
   InitialState,
   compose(
-    applyMiddleware(thunk, api, createLogger()),
+    applyMiddleware(thunk, createLogger()),
     DevTools.instrument()
   )
 )

@@ -1,5 +1,5 @@
 import { Schema, arrayOf, normalize } from 'normalizr';
-import { camlizeKeys } from 'humps'
+import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
 
 export const CALL_API = Symbol('Call API');

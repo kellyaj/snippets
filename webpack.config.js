@@ -6,7 +6,7 @@ var config = module.exports = {
   context: __dirname,
   entry: './js_src/entry.js',
   plugins: [
-    new ExtractTextPlugin('styles.css')
+    new ExtractTextPlugin('../../../public/styles.css')
   ]
 };
 
