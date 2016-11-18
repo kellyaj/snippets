@@ -1,9 +1,7 @@
 import { Schema, arrayOf, normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
-import ActionTypes from '../actions/ActionTypes'
-
-const CALL_API = "CALL_API_SYMBOL"
+import { CALL_API } from '../actions/ApiActionTypes'
 
 function buildOptions(httpMethod, actionData) {
   if (httpMethod == 'GET') { return {} }

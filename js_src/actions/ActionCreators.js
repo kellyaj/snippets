@@ -1,5 +1,6 @@
 import ActionTypes from './ActionTypes'
 import {
+  CALL_API,
   GET_SNIPPET_REQUEST,
   GET_SNIPPET_SUCCESS,
   GET_SNIPPET_FAILURE,
@@ -7,8 +8,6 @@ import {
   ADD_SNIPPET_SUCCESS,
   ADD_SNIPPET_FAILURE
 } from './ApiActionTypes'
-
-const CALL_API = "CALL_API_SYMBOL"
 
 class ActionCreators {
 
