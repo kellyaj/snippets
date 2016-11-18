@@ -1,4 +1,14 @@
 import ActionTypes from './ActionTypes'
+import {
+  GET_SNIPPET_REQUEST,
+  GET_SNIPPET_SUCCESS,
+  GET_SNIPPET_FAILURE,
+  ADD_SNIPPET_REQUEST,
+  ADD_SNIPPET_SUCCESS,
+  ADD_SNIPPET_FAILURE
+} from './ApiActionTypes'
+
+const CALL_API = "CALL_API_SYMBOL"
 
 class ActionCreators {
 
@@ -13,21 +23,23 @@ class ActionCreators {
   addNewSnippet(snippet) {
     return {
       type: ActionTypes.ADD_NEW_SNIPPET,
-      callApi: true,
-      endpoint: '/snippets',
-      httpMethod: 'POST',
-      data: snippet,
-      addNewSnippet: true
+      [CALL_API]: {
+        types: [ ADD_SNIPPET_REQUEST, ADD_SNIPPET_SUCCESS, ADD_SNIPPET_FAILURE ],
+        endpoint: '/snippets',
+        httpMethod: 'POST',
+        requestData: snippet
+      }
     }
   }
 
   retrieveSnippets() {
     return {
       type: ActionTypes.RETRIEVE_SNIPPETS,
-      callApi: true,
-      endpoint: '/snippets',
-      httpMethod: 'GET',
-      retrieveSnippets: true
+      [CALL_API]: {
+        types: [ GET_SNIPPET_REQUEST, GET_SNIPPET_SUCCESS, GET_SNIPPET_FAILURE ],
+        endpoint: '/snippets',
+        httpMethod: 'GET',
+      }
     }
   }
 }

@@ -3,6 +3,8 @@ import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
 import ActionTypes from '../actions/ActionTypes'
 
+const CALL_API = "CALL_API_SYMBOL"
+
 function buildOptions(httpMethod, actionData) {
   if (httpMethod == 'GET') { return {} }
   return {
@@ -29,26 +31,31 @@ function makeRequest(endpoint, httpMethod, actionData) {
 }
 
 export default store => next => action => {
-  const callAPI = action.callApi
+  const callAPI = action[CALL_API]
   if (typeof callAPI === 'undefined') {
     return next(action)
   }
 
+  let { endpoint } = callAPI
+  const { types, httpMethod, requestData } = callAPI
+
   function actionWith(data) {
     const finalAction = Object.assign({}, action, data)
-    delete finalAction.callApi
+    delete finalAction[CALL_API]
     return finalAction
   }
 
-  next(actionWith({ type: ActionTypes.REQUEST_TYPE }))
+  const [ requestType, successType, failureType ] = types
 
-  return makeRequest(action.endpoint, action.httpMethod, action.data).then(
+  next(actionWith({ type: requestType }))
+
+  return makeRequest(endpoint, httpMethod, requestData).then(
     response => next(actionWith({
       response,
-      type: ActionTypes.SUCCESS_TYPE
+      type: successType
     })),
     error => next(actionWith({
-      type: ActionTypes.FAILURE_TYPE,
+      type: failureType,
       error: error.message || 'something went wrong'
     }))
   )
