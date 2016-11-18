@@ -1,6 +1,7 @@
-import { Schema, arrayOf, normalize } from 'normalizr';
+import { Schema, arrayOf, normalize } from 'normalizr'
 import { camelizeKeys } from 'humps'
 import 'isomorphic-fetch'
+import ActionTypes from '../actions/ActionTypes'
 
 function retrieveSnippets() {
   return fetch('/snippets')
@@ -21,25 +22,21 @@ export default store => next => action => {
     return next(action)
   }
 
-  const SUCCESS_TYPE = 'SUCCESS'
-  const FAILURE_TYPE = 'FAILURE'
-  const REQUEST_TYPE = 'REQUEST'
-
   function actionWith(data) {
     const finalAction = Object.assign({}, action, data)
     delete finalAction.callApi
     return finalAction
   }
 
-  next(actionWith({ type: REQUEST_TYPE }))
+  next(actionWith({ type: ActionTypes.REQUEST_TYPE }))
 
   return retrieveSnippets().then(
     response => next(actionWith({
       response,
-      type: SUCCESS_TYPE
+      type: ActionTypes.SUCCESS_TYPE
     })),
     error => next(actionWith({
-      type: FAILURE_TYPE,
+      type: ActionTypes.FAILURE_TYPE,
       error: error.message || 'something went wrong'
     }))
   )
