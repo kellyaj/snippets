@@ -1,5 +1,7 @@
 import {
   CALL_API,
+  RETRIEVE_SNIPPETS,
+  ADD_NEW_SNIPPET,
   GET_SNIPPET_REQUEST,
   GET_SNIPPET_SUCCESS,
   GET_SNIPPET_FAILURE,
@@ -8,12 +10,19 @@ import {
   ADD_SNIPPET_FAILURE,
   SHOW_ADD_SNIPPET_FORM,
   HIDE_ADD_SNIPPET_FORM,
-  RETRIEVE_SNIPPETS,
-  ADD_NEW_SNIPPET
+  RETRIEVE_TAGS,
+  ADD_NEW_TAG,
+  GET_TAG_REQUEST,
+  GET_TAG_SUCCESS,
+  GET_TAG_FAILURE,
+  ADD_TAG_REQUEST,
+  ADD_TAG_SUCCESS,
+  ADD_TAG_FAILURE,
+  SHOW_ADD_TAG_FORM,
+  HIDE_ADD_TAG_FORM,
 } from './ActionTypes'
 
 class ActionCreators {
-
   toggleSnippetForm(showForm) {
     if(showForm) {
       return { type: SHOW_ADD_SNIPPET_FORM };
@@ -44,6 +53,38 @@ class ActionCreators {
       }
     }
   }
+
+  toggleTagForm(showForm) {
+    if(showForm) {
+      return { type: SHOW_ADD_TAG_FORM };
+    } else {
+      return { type: HIDE_ADD_TAG_FORM };
+    }
+  }
+
+  addNewTag(tag) {
+    return {
+      type: ADD_NEW_TAG,
+      [CALL_API]: {
+        types: [ ADD_TAG_REQUEST, ADD_TAG_SUCCESS, ADD_TAG_FAILURE ],
+        endpoint: '/tags',
+        httpMethod: 'POST',
+        requestData: tag
+      }
+    }
+  }
+
+  retrieveTags() {
+    return {
+      type: RETRIEVE_TAGS,
+      [CALL_API]: {
+        types: [ GET_TAG_REQUEST, GET_TAG_SUCCESS, GET_TAG_FAILURE ],
+        endpoint: '/tags',
+        httpMethod: 'GET',
+      }
+    }
+  }
+
 }
 
 module.exports = new ActionCreators()

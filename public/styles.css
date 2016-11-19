@@ -70,6 +70,8 @@ code {
 .SnippetTagSelection-list {
   list-style-type: none;
 }
+.TagForm-container {
+}
 body {
   margin: 0;
   padding: 0;

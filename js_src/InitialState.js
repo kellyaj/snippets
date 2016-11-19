@@ -16,7 +16,8 @@ const InitialState = {
     }
   },
   uiDataReducer: {
-    showAddSnippetForm: false
+    showAddSnippetForm: false,
+    showAddTagForm: false
   },
   entities: {}
 }
