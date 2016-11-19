@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import Store from '../../store/Store'
+import ActionCreators from '../../actions/ActionCreators'
+import TagListItem from './TagListItem'
 import '../../styles/TagList.css';
 
-
-import TagListItem from './TagListItem'
-
 class TagList extends Component {
+
+  componentDidMount() {
+    return Store.dispatch(ActionCreators.retrieveTags())
+  }
+
   createTagListItem(tag, idx) {
     return (
       <TagListItem

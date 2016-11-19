@@ -1,5 +1,3 @@
-.SnippetBoard-container {
-}
 .NavHeader-container {
   background-color: black;
   color: #fff;
@@ -71,6 +69,8 @@ code {
   list-style-type: none;
 }
 .TagForm-container {
+}
+.SnippetBoard-container {
 }
 body {
   margin: 0;

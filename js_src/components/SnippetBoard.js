@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
-import '../styles/SnippetBoard.css'
-
 import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
 import SnippetForm from './snippet_form/SnippetForm'
 import TagForm from './tag_form/TagForm'
-
 import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
+import '../styles/SnippetBoard.css'
 
 class SnippetBoard extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
     return Store.dispatch(ActionCreators.retrieveSnippets())
   }
 
