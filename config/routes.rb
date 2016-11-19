@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :snippets
 
+  resources :tags
+
   root :to => "dashboard#index"
 end
