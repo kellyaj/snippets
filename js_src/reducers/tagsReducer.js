@@ -9,7 +9,7 @@ const tagsReducer = (tags = {}, action) => {
       return Object.assign({}, tags, action.response)
     case ADD_TAG_SUCCESS:
       const tag = action.response
-      return Object.assign({}, snippets, {
+      return Object.assign({}, tags, {
         [tag.id]: tag
       })
     default:
