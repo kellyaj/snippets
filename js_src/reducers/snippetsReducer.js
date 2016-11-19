@@ -1,8 +1,7 @@
-import ActionTypes from '../actions/ActionTypes'
 import {
   GET_SNIPPET_SUCCESS,
   ADD_SNIPPET_SUCCESS,
-} from '../actions/ApiActionTypes'
+} from '../actions/ActionTypes'
 
 const snippetsReducer = (snippets = {}, action) => {
   switch(action.type) {

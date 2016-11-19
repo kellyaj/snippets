@@ -1,11 +1,16 @@
-import ActionTypes from '../actions/ActionTypes';
+import {
+  ADD_SNIPPET_SUCCESS,
+  SHOW_ADD_SNIPPET_FORM,
+  HIDE_ADD_SNIPPET_FORM
+} from '../actions/ActionTypes'
 
 const uiDataReducer = (uiData = {}, action) => {
   switch(action.type) {
-    case ActionTypes.SHOW_ADD_SNIPPET_FORM:
+    case SHOW_ADD_SNIPPET_FORM:
       return Object.assign({}, uiData, { showAddSnippetForm: true })
-
-    case ActionTypes.HIDE_ADD_SNIPPET_FORM:
+    case HIDE_ADD_SNIPPET_FORM:
+      return Object.assign({}, uiData, { showAddSnippetForm: false })
+    case ADD_SNIPPET_SUCCESS:
       return Object.assign({}, uiData, { showAddSnippetForm: false })
 
     default:

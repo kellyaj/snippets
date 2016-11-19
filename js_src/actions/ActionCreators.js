@@ -1,4 +1,3 @@
-import ActionTypes from './ActionTypes'
 import {
   CALL_API,
   GET_SNIPPET_REQUEST,
@@ -6,22 +5,26 @@ import {
   GET_SNIPPET_FAILURE,
   ADD_SNIPPET_REQUEST,
   ADD_SNIPPET_SUCCESS,
-  ADD_SNIPPET_FAILURE
-} from './ApiActionTypes'
+  ADD_SNIPPET_FAILURE,
+  SHOW_ADD_SNIPPET_FORM,
+  HIDE_ADD_SNIPPET_FORM,
+  RETRIEVE_SNIPPETS,
+  ADD_NEW_SNIPPET
+} from './ActionTypes'
 
 class ActionCreators {
 
   toggleSnippetForm(showForm) {
     if(showForm) {
-      return { type: ActionTypes.SHOW_ADD_SNIPPET_FORM };
+      return { type: SHOW_ADD_SNIPPET_FORM };
     } else {
-      return { type: ActionTypes.HIDE_ADD_SNIPPET_FORM };
+      return { type: HIDE_ADD_SNIPPET_FORM };
     }
   }
 
   addNewSnippet(snippet) {
     return {
-      type: ActionTypes.ADD_NEW_SNIPPET,
+      type: ADD_NEW_SNIPPET,
       [CALL_API]: {
         types: [ ADD_SNIPPET_REQUEST, ADD_SNIPPET_SUCCESS, ADD_SNIPPET_FAILURE ],
         endpoint: '/snippets',
@@ -33,7 +36,7 @@ class ActionCreators {
 
   retrieveSnippets() {
     return {
-      type: ActionTypes.RETRIEVE_SNIPPETS,
+      type: RETRIEVE_SNIPPETS,
       [CALL_API]: {
         types: [ GET_SNIPPET_REQUEST, GET_SNIPPET_SUCCESS, GET_SNIPPET_FAILURE ],
         endpoint: '/snippets',
