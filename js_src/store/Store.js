@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import DevTools from '../containers/DevTools';
 
-import api from '../middleware/MyApi';
+import api from '../middleware/api';
 import rootReducer from '../reducers';
 import InitialState from '../InitialState';
 
