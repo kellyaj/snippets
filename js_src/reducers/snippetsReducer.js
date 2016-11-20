@@ -1,6 +1,7 @@
 import {
   GET_SNIPPET_SUCCESS,
   ADD_SNIPPET_SUCCESS,
+  FILTER_BY_TAG_ID,
 } from '../actions/ActionTypes'
 
 const snippetsReducer = (snippets = {}, action) => {
@@ -12,6 +13,9 @@ const snippetsReducer = (snippets = {}, action) => {
       return Object.assign({}, snippets, {
         [snippet.id]: snippet
       })
+    case FILTER_BY_TAG_ID:
+      // not implemented
+      return snippets
     default:
       return snippets
   }

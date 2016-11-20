@@ -20,6 +20,8 @@ import {
   ADD_TAG_FAILURE,
   SHOW_ADD_TAG_FORM,
   HIDE_ADD_TAG_FORM,
+  FILTER_BY_TAG_ID,
+  REMOVE_ALL_TAG_FILTERS,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -82,6 +84,17 @@ class ActionCreators {
         endpoint: '/tags',
         httpMethod: 'GET',
       }
+    }
+  }
+
+  displayAllTags() {
+    return this.retrieveTags()
+  }
+
+  displayOnlyTag(tagId) {
+    return {
+      type: FILTER_BY_TAG_ID,
+      tagId: tagId
     }
   }
 
