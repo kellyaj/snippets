@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119032510) do
+ActiveRecord::Schema.define(version: 20161120232854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "snippet_tags", force: :cascade do |t|
+    t.integer "snippet_id"
+    t.integer "tag_id"
+  end
 
   create_table "snippets", force: :cascade do |t|
     t.string "name"

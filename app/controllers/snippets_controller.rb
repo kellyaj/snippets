@@ -4,10 +4,12 @@ class SnippetsController < ApplicationController
 
   def index
     snippets = Snippet.all.map do |snippet|
+      tag_ids = SnippetTag.where(:snippet_id => snippet.id).map(&:tag_id)
       {
         :id => snippet.id,
         :name => snippet.name,
-        :content => snippet.content
+        :content => snippet.content,
+        :tags => tag_ids
       }
     end
     render :json => snippets.to_json
