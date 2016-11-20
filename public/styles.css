@@ -16,11 +16,14 @@
 }
 .TagList-container {
   background-color: gray;
-  padding: 0.3em 1.3em;
+  display: inline-block;
+  max-width: 20%;
+  vertical-align: top;
 }
 
 .TagList-list {
   list-style-type: none;
+  margin: 0 auto;
 }
 
 .TagList-list-item {
@@ -29,9 +32,10 @@
   border-radius: 6px;
   color: black;
   cursor: pointer;
-  display: inline-block;
-  padding: 0.3em;
-  margin: 0 0.4em;
+  display: block;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 .SmallTagList-container {
@@ -44,6 +48,9 @@
 .SmallTagList-list-item {
 }
 .SnippetList-container {
+  display: inline-block;
+  max-width: 75%;
+  vertical-align: top;
 }
 
 .SnippetList-card {
@@ -53,6 +60,7 @@
   display: inline-block;
   padding: 1em;
   margin: 0.4em;
+  text-align: center;
 }
 
 .SnippetList-card-name {

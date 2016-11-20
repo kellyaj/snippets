@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import SnippetBoard from './containers/SnippetBoard';
+import React, { Component } from 'react'
+import SnippetBoard from './containers/SnippetBoard'
 
 class App extends Component {
   render() {
@@ -7,8 +7,8 @@ class App extends Component {
       <div>
         <SnippetBoard />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

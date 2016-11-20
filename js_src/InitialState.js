@@ -7,4 +7,4 @@ const InitialState = {
   }
 }
 
-module.exports = InitialState;
+module.exports = InitialState
