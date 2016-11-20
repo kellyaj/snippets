@@ -21,7 +21,6 @@ const uiDataReducer = (uiData = {}, action) => {
       return Object.assign({}, uiData, { showAddTagForm: false })
     case ADD_TAG_SUCCESS:
       return Object.assign({}, uiData, { showAddTagForm: false })
-
     default:
       return uiData
   }
