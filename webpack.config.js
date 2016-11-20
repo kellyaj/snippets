@@ -32,7 +32,9 @@ config.module = {
       test: /\.js$/,
       include: path.resolve(__dirname, './js_src'),
       loader: 'babel',
-      query: require('./js_config/babel.dev')
+      query: {
+        presets: ['es2015', 'react']
+      }
     },
     {
       test: /\.css$/,
