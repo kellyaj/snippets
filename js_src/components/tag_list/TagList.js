@@ -12,7 +12,7 @@ class TagList extends Component {
   }
 
   displayAllTags() {
-    return Store.displatch(ActionCreators.displayAllTags())
+    return Store.dispatch(ActionCreators.displayAllTags())
   }
 
   displayOnlyTag(tagId) {

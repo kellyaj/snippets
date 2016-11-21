@@ -91,7 +91,7 @@ class ActionCreators {
   }
 
   displayAllTags() {
-    return this.retrieveTags()
+    return this.retrieveSnippets()
   }
 
   displayOnlyTag(tagId) {
