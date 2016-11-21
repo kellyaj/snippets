@@ -19,4 +19,9 @@ class SnippetsController < ApplicationController
     snippet = Snippet.create(name: params[:name], content: params[:content])
     render :json => snippet.to_json
   end
+
+  def filter_by_id
+    filtered_snippets = Tag.find(params[:tagId]).snippets
+    render :json => filtered_snippets.to_json
+  end
 end
