@@ -22,6 +22,9 @@ import {
   HIDE_ADD_TAG_FORM,
   FILTER_BY_TAG_ID,
   REMOVE_ALL_TAG_FILTERS,
+  FILTER_SNIPPET_REQUEST,
+  FILTER_SNIPPET_SUCCESS,
+  FILTER_SNIPPET_FAILURE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -94,7 +97,11 @@ class ActionCreators {
   displayOnlyTag(tagId) {
     return {
       type: FILTER_BY_TAG_ID,
-      tagId: tagId
+      [CALL_API]: {
+        types: [ FILTER_SNIPPET_REQUEST, FILTER_SNIPPET_SUCCESS, FILTER_SNIPPET_FAILURE ],
+        endpoint: `/snippets/filter_by_id?tagId=${tagId}`,
+        httpMethod: 'GET'
+      }
     }
   }
 
