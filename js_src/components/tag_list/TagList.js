@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import _ from 'lodash';
 import Store from '../../store/Store'
 import ActionCreators from '../../actions/ActionCreators'
 import TagListItem from './TagListItem'
-import '../../styles/TagList.css';
+import '../../styles/TagList.css'
 
 class TagList extends Component {
 
@@ -26,7 +26,7 @@ class TagList extends Component {
         tag={tag}
         filterByTagId={this.displayOnlyTag.bind(this)}
       />
-    );
+    )
   }
 
 
@@ -37,7 +37,7 @@ class TagList extends Component {
         <li className="TagList-list-item" onClick={this.displayAllTags.bind(this)}>All</li>
         {tagListItems}
       </ul>
-    );
+    )
   }
 
   render() {
@@ -45,7 +45,7 @@ class TagList extends Component {
       <div className="TagList-container">
         {this.buildTagList()}
       </div>
-    );
+    )
   }
 }
 

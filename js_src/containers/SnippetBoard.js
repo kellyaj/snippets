@@ -1,9 +1,6 @@
 import { connect } from 'react-redux';
 import DashBoard from '../components/SnippetBoard';
 
-import { showAddSnippetForm, hideAddSnippetForm } from '../actions/ActionCreators';
-
-
 const mapStateToProps = (state) => {
   return {
     uiData: state.uiDataReducer,
@@ -13,20 +10,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    showAddSnippetForm: () => {
-      dispatch(showAddSnippetForm())
-    },
-    hideAddSnippetForm: () => {
-      dispatch(hideAddSnippetForm())
-    }
-  }
-}
-
-const SnippetBoard = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DashBoard)
+const SnippetBoard = connect(mapStateToProps)(DashBoard)
 
 export default SnippetBoard
