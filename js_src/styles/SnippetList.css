@@ -14,6 +14,14 @@
   text-align: center;
 }
 
+.SnippetCardMenu-container {
+  float: right;
+}
+
+.SnippetCardMenu-container > ul {
+  list-style-type: none;
+}
+
 .SnippetList-card-name {
   margin: 1em 0;
 }

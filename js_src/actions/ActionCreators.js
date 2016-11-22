@@ -28,6 +28,12 @@ import {
   UPDATE_SELECTED_TAG,
   ADD_TAG_TO_NEW_SNIPPET,
   REMOVE_TAG_FROM_NEW_SNIPPET,
+  REMOVE_SNIPPET,
+  LOCK_SNIPPET,
+  UNLOCK_SNIPPET,
+  REMOVE_SNIPPET_REQUEST,
+  REMOVE_SNIPPET_SUCCESS,
+  REMOVE_SNIPPET_FAILURE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -127,6 +133,20 @@ class ActionCreators {
       type: REMOVE_TAG_FROM_NEW_SNIPPET,
       tagId: tagId
     }
+  }
+
+  removeSnippet(snippetId) {
+    return {
+      type: REMOVE_SNIPPET,
+      [CALL_API]: {
+        types: [ REMOVE_SNIPPET_REQUEST, REMOVE_SNIPPET_SUCCESS, REMOVE_SNIPPET_FAILURE ],
+        endpoint: `/snippets/${snippetId}`,
+        httpMethod: 'DELETE'
+      }
+    }
+  }
+
+  toggleLockSnippet(snippetId) {
   }
 
 }

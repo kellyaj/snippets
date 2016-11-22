@@ -21,6 +21,12 @@ class SnippetsController < ApplicationController
     render :json => build_snippets(filtered_snippets).to_json
   end
 
+  def destroy
+    Snippet.find(params[:id]).destroy
+
+    render :json => { id: params[:id] }.to_json
+  end
+
   def build_snippets(snippets)
     snippets.map do |snippet|
       tag_ids = SnippetTag.where(:snippet_id => snippet.id).map(&:tag_id)

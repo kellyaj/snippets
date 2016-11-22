@@ -38,6 +38,14 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.removeTagFromNewSnippet(tagId))
   }
 
+  removeSnippetHandler(snippetId) {
+    return Store.dispatch(ActionCreators.removeSnippet(snippetId))
+  }
+
+  lockSnippetHandler(snippetId) {
+    return Store.dispatch(ActionCreators.toggleLockSnippet(snippetId))
+  }
+
   snippetFormContent() {
     if(this.props.uiData.showAddSnippetForm) {
       return (
@@ -80,6 +88,8 @@ class SnippetBoard extends Component {
         />
         <SnippetList
           snippets={this.props.snippets}
+          removeSnippetHandler={this.removeSnippetHandler.bind(this)}
+          lockSnippetHandler={this.lockSnippetHandler.bind(this)}
         />
       </div>
     );

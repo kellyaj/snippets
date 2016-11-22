@@ -1,7 +1,9 @@
+import _ from 'lodash'
 import {
   GET_SNIPPET_SUCCESS,
   ADD_SNIPPET_SUCCESS,
   FILTER_SNIPPET_SUCCESS,
+  REMOVE_SNIPPET_SUCCESS,
 } from '../actions/ActionTypes'
 
 const snippetsReducer = (snippets = {}, action) => {
@@ -15,6 +17,8 @@ const snippetsReducer = (snippets = {}, action) => {
       })
     case FILTER_SNIPPET_SUCCESS:
       return Object.assign({}, {}, action.response)
+    case REMOVE_SNIPPET_SUCCESS:
+      return _.omit(snippets, parseInt(action.response.id))
     default:
       return snippets
   }

@@ -10,6 +10,8 @@ class SnippetList extends Component {
       <SnippetListItem
         key={idx}
         snippet={snippet}
+        removeSnippetHandler={this.props.removeSnippetHandler}
+        lockSnippetHandler={this.props.lockSnippetHandler}
       />
     );
   }
@@ -33,7 +35,9 @@ class SnippetList extends Component {
 }
 
 SnippetList.propTypes = {
-  snippets: React.PropTypes.object.isRequired
+  snippets: React.PropTypes.object.isRequired,
+  removeSnippetHandler: React.PropTypes.func.isRequired,
+  lockSnippetHandler: React.PropTypes.func.isRequired
 }
 
 export default SnippetList
