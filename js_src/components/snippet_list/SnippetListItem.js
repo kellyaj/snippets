@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class SnippetListItem extends Component {
   render() {
-    // todo: lock item, X icon for delete
+    const {
+      name,
+      content
+    } = this.props.snippet
     return (
       <div className="SnippetList-card">
-        <div className="SnippetList-card-name">{this.props.snippet.name}</div>
-        <code>{this.props.snippet.content}</code>
+        <div className="SnippetList-card-name">{name}</div>
+        <code>{content}</code>
       </div>
-    );
+    )
   }
 
 }

@@ -20,7 +20,8 @@ class SelectableTagItem extends Component {
 }
 
 SelectableTagItem.propTypes = {
-  tag: React.PropTypes.object.isRequired
+  tag: React.PropTypes.object.isRequired,
+  selectTagItem: React.PropTypes.func.isRequired,
 }
 
 export default SelectableTagItem

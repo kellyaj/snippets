@@ -5,7 +5,7 @@ const InitialState = {
     showAddSnippetForm: false,
     showAddTagForm: false
   },
-  newSnippet: { tags: [] }
+  newSnippetReducer: { tags: [] }
 }
 
 module.exports = InitialState

@@ -43,7 +43,9 @@ class SnippetForm extends Component {
 SnippetForm.propTypes = {
   uiData: React.PropTypes.object.isRequired,
   tags: React.PropTypes.object.isRequired,
-  newSnippet: React.PropTypes.object.isRequired
+  newSnippet: React.PropTypes.object.isRequired,
+  addTagToNewSnippet: React.PropTypes.func.isRequired,
+  removeTagFromNewSnippet: React.PropTypes.func.isRequired,
 }
 
 export default SnippetForm
