@@ -15,12 +15,12 @@ describe('snippetsReducer', () => {
     ).to.eql(newSnippet)
   })
 
-  it('sets the newSnippet to an empty object after a snippet was successfully added', () => {
+  it('sets the newSnippet to a blank newSnippet after a snippet was successfully added', () => {
     const newSnippet = { name: "some snippet" }
     const action = { type: ADD_SNIPPET_SUCCESS }
     expect(
       newSnippetReducer(newSnippet, action)
-    ).to.eql({})
+    ).to.eql({ tags: [] })
   })
 
   it('adds a tag to the new snippet tag array', () => {
