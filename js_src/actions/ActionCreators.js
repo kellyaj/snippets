@@ -25,6 +25,8 @@ import {
   FILTER_SNIPPET_REQUEST,
   FILTER_SNIPPET_SUCCESS,
   FILTER_SNIPPET_FAILURE,
+  ADD_TAG_TO_NEW_SNIPPET,
+  REMOVE_TAG_FROM_NEW_SNIPPET,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -102,6 +104,20 @@ class ActionCreators {
         endpoint: `/snippets/filter_by_id?tagId=${tagId}`,
         httpMethod: 'GET'
       }
+    }
+  }
+
+  addTagToNewSnippet(tagId) {
+    return {
+      type: ADD_TAG_TO_NEW_SNIPPET,
+      tagId: tagId
+    }
+  }
+
+  removeTagFromNewSnippet(tagId) {
+    return {
+      type: REMOVE_TAG_FROM_NEW_SNIPPET,
+      tagId: tagId
     }
   }
 

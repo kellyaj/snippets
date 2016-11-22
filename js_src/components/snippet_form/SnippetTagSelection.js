@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
-import '../../styles/SnippetTagSelection.css';
+import React, { Component } from 'react'
+import _ from 'lodash'
+import '../../styles/SnippetTagSelection.css'
 
-import SelectableTagItem from './SelectableTagItem';
+import SelectableTagItem from './SelectableTagItem'
 
 class SnippetTagSelection extends Component {
+
+  selectTagItem(tagId, isChecked) {
+    if(isChecked) {
+      return this.props.addTagToNewSnippet(tagId)
+    } else {
+      return this.props.removeTagFromNewSnippet(tagId)
+    }
+  }
+
   createTagListItem(tag, idx) {
     return (
       <SelectableTagItem
         key={idx}
         tag={tag}
+        selectTagItem={this.selectTagItem.bind(this)}
       />
     );
   }

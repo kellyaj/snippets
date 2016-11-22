@@ -65,7 +65,7 @@
   "scripts": {
     "start": "node ./js_scripts/start.js",
     "build": "node ./js_scripts/build.js",
-    "test": "mocha --compilers js:babel-core/register test --recursive"
+    "test": "mocha --compilers js:babel-core/register test --recursive || true"
   },
   "eslintConfig": {
     "extends": "./js_config/eslint.js"

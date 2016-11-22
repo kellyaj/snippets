@@ -1,11 +1,12 @@
-import { combineReducers } from 'redux';
-import _ from 'lodash';
+import { combineReducers } from 'redux'
+import _ from 'lodash'
 
-import snippetsReducer from './snippetsReducer';
-import tagsReducer from './tagsReducer';
-import uiDataReducer from './uiDataReducer';
+import snippetsReducer from './snippetsReducer'
+import tagsReducer from './tagsReducer'
+import uiDataReducer from './uiDataReducer'
+import newSnippetReducer from './newSnippetReducer'
 
-function entities( state = { uiData: {}, snippets: {}, tags: {} }, action) {
+function entities( state = { uiData: {}, snippets: {}, tags: {}, newSnippet: {} }, action) {
   if (action.response && action.response.entities) {
     return _.merge({}, state, action.response.entities)
   }
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   entities,
   snippetsReducer,
   tagsReducer,
-  uiDataReducer
+  uiDataReducer,
+  newSnippetReducer
 })
 
 export default rootReducer

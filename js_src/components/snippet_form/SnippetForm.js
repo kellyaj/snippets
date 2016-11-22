@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import '../../styles/SnippetForm.css'
 
 import SnippetTagSelection from './SnippetTagSelection'
@@ -7,11 +6,13 @@ import SnippetTagSelection from './SnippetTagSelection'
 class SnippetForm extends Component {
 
   submitNewSnippet() {
-    const nameValue = ReactDOM.findDOMNode(this.refs.nameInput).value
-    const contentValue = ReactDOM.findDOMNode(this.refs.contentInput).value
+    const nameValue = this.refs.nameInput.value
+    const contentValue = this.refs.contentInput.value
+    const tagIds = this.props.newSnippet.tags
     const snippetData = {
       name: nameValue,
       content: contentValue,
+      tags: tagIds
     }
     this.props.addSnippetHandler(snippetData)
   }
@@ -28,6 +29,8 @@ class SnippetForm extends Component {
         </div>
         <SnippetTagSelection
           tags={this.props.tags}
+          addTagToNewSnippet={this.props.addTagToNewSnippet}
+          removeTagFromNewSnippet={this.props.removeTagFromNewSnippet}
         />
         <div onClick={this.submitNewSnippet.bind(this)} className="">
           Add Snippet
@@ -39,7 +42,8 @@ class SnippetForm extends Component {
 
 SnippetForm.propTypes = {
   uiData: React.PropTypes.object.isRequired,
-  tags: React.PropTypes.object.isRequired
+  tags: React.PropTypes.object.isRequired,
+  newSnippet: React.PropTypes.object.isRequired
 }
 
 export default SnippetForm

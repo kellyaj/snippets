@@ -4,7 +4,8 @@ const InitialState = {
   uiDataReducer: {
     showAddSnippetForm: false,
     showAddTagForm: false
-  }
+  },
+  newSnippet: { tags: [] }
 }
 
 module.exports = InitialState

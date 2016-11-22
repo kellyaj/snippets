@@ -30,13 +30,24 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.addNewTag(tagData))
   }
 
+  addTagToNewSnippetHandler(tagId) {
+    return Store.dispatch(ActionCreators.addTagToNewSnippet(tagId))
+  }
+
+  removeTagFromNewSnippetHandler(tagId) {
+    return Store.dispatch(ActionCreators.removeTagFromNewSnippet(tagId))
+  }
+
   snippetFormContent() {
     if(this.props.uiData.showAddSnippetForm) {
       return (
         <SnippetForm
           uiData={this.props.uiData}
           addSnippetHandler={this.addSnippetHandler.bind(this)}
+          addTagToNewSnippet={this.addTagToNewSnippetHandler.bind(this)}
+          removeTagFromNewSnippet={this.removeTagFromNewSnippetHandler.bind(this)}
           tags={this.props.tags}
+          newSnippet={this.props.newSnippet}
         />
       )
     }

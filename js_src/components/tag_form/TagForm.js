@@ -5,7 +5,7 @@ import '../../styles/TagForm.css'
 class TagForm extends Component {
 
   submitNewTag() {
-    const nameValue = ReactDOM.findDOMNode(this.refs.tagNameInput).value
+    const nameValue = this.refs.tagNameInput.value
     const tagData = {
       name: nameValue,
     }

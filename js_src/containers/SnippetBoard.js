@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
   return {
     uiData: state.uiDataReducer,
     snippets: state.snippetsReducer,
-    tags: state.tagsReducer
+    tags: state.tagsReducer,
+    newSnippet: state.newSnippetReducer
   }
 }
 
