@@ -4,7 +4,9 @@ import {
   HIDE_ADD_SNIPPET_FORM,
   SHOW_ADD_TAG_FORM,
   HIDE_ADD_TAG_FORM,
-  ADD_TAG_SUCCESS
+  ADD_TAG_SUCCESS,
+  FILTER_BY_TAG_ID,
+  UPDATE_SELECTED_TAG,
 } from '../actions/ActionTypes'
 
 const uiDataReducer = (uiData = {}, action) => {
@@ -21,6 +23,8 @@ const uiDataReducer = (uiData = {}, action) => {
       return Object.assign({}, uiData, { showAddTagForm: false })
     case ADD_TAG_SUCCESS:
       return Object.assign({}, uiData, { showAddTagForm: false })
+    case UPDATE_SELECTED_TAG:
+      return Object.assign({}, uiData, { selectedTagId: action.tagId })
     default:
       return uiData
   }

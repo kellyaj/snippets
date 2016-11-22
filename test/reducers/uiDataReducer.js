@@ -6,7 +6,8 @@ import {
   HIDE_ADD_SNIPPET_FORM,
   SHOW_ADD_TAG_FORM,
   HIDE_ADD_TAG_FORM,
-  ADD_TAG_SUCCESS
+  ADD_TAG_SUCCESS,
+  UPDATE_SELECTED_TAG,
 } from '../../js_src/actions/ActionTypes'
 
 describe('uiDataReducer', () => {
@@ -58,6 +59,14 @@ describe('uiDataReducer', () => {
     expect(
       uiDataReducer({ showAddTagForm: true }, action)
     ).to.eql({ showAddTagForm: false })
+  })
+
+  it('sets the selectedTagId', () => {
+    const tagId = 87
+    const action = { type: UPDATE_SELECTED_TAG, tagId: tagId }
+    expect(
+      uiDataReducer({ selectedTagId: 44 }, action)
+    ).to.eql({ selectedTagId: tagId })
   })
 })
 

@@ -76,6 +76,7 @@ class SnippetBoard extends Component {
         { this.tagFormContent() }
         <TagList
           tags={this.props.tags}
+          uiData={this.props.uiData}
         />
         <SnippetList
           snippets={this.props.snippets}
@@ -87,7 +88,8 @@ class SnippetBoard extends Component {
 
 SnippetBoard.propTypes = {
   snippets: React.PropTypes.object.isRequired,
-  uiData: React.PropTypes.object.isRequired
+  uiData: React.PropTypes.object.isRequired,
+  tags: React.PropTypes.object.isRequired,
 }
 
 export default SnippetBoard

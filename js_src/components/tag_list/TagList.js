@@ -12,11 +12,19 @@ class TagList extends Component {
   }
 
   displayAllTags() {
-    return Store.dispatch(ActionCreators.displayAllTags())
+    Store.dispatch((dispatch) => {
+      return dispatch(ActionCreators.displayAllTags()).then(() => {
+        return dispatch(ActionCreators.changeSelectedTag(null))
+      })
+    })
   }
 
   displayOnlyTag(tagId) {
-    return Store.dispatch(ActionCreators.displayOnlyTag(tagId))
+    Store.dispatch((dispatch) => {
+      return dispatch(ActionCreators.displayOnlyTag(tagId)).then(() => {
+        return dispatch(ActionCreators.changeSelectedTag(tagId))
+      })
+    })
   }
 
   createTagListItem(tag, idx) {
@@ -25,16 +33,21 @@ class TagList extends Component {
         key={idx}
         tag={tag}
         filterByTagId={this.displayOnlyTag.bind(this)}
+        uiData={this.props.uiData}
       />
     )
   }
 
+  allTagsSelected() {
+    const { selectedTagId } = this.props.uiData
+    return `TagList-list-item ${selectedTagId === null ? "selected-tag" : ""}`
+  }
 
   buildTagList() {
     const tagListItems = _.map(this.props.tags, this.createTagListItem.bind(this));
     return (
       <ul className="TagList-list">
-        <li className="TagList-list-item" onClick={this.displayAllTags.bind(this)}>All</li>
+        <li className={this.allTagsSelected()} onClick={this.displayAllTags.bind(this)}>All</li>
         {tagListItems}
       </ul>
     )
@@ -50,7 +63,8 @@ class TagList extends Component {
 }
 
 TagList.propTypes = {
-  tags: React.PropTypes.object.isRequired
+  tags: React.PropTypes.object.isRequired,
+  uiData: React.PropTypes.object.isRequired,
 }
 
 export default TagList

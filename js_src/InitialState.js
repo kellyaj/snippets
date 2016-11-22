@@ -3,7 +3,8 @@ const InitialState = {
   tagsReducer: {},
   uiDataReducer: {
     showAddSnippetForm: false,
-    showAddTagForm: false
+    showAddTagForm: false,
+    selectedTagId: null
   },
   newSnippetReducer: { tags: [] }
 }

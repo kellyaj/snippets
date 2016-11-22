@@ -25,6 +25,7 @@ import {
   FILTER_SNIPPET_REQUEST,
   FILTER_SNIPPET_SUCCESS,
   FILTER_SNIPPET_FAILURE,
+  UPDATE_SELECTED_TAG,
   ADD_TAG_TO_NEW_SNIPPET,
   REMOVE_TAG_FROM_NEW_SNIPPET,
 } from './ActionTypes'
@@ -104,6 +105,13 @@ class ActionCreators {
         endpoint: `/snippets/filter_by_id?tagId=${tagId}`,
         httpMethod: 'GET'
       }
+    }
+  }
+
+  changeSelectedTag(tagId) {
+    return {
+      type: UPDATE_SELECTED_TAG,
+      tagId: tagId
     }
   }
 
