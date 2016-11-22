@@ -28,15 +28,18 @@ class SnippetsController < ApplicationController
   end
 
   def build_snippets(snippets)
+    acc = {}
     snippets.map do |snippet|
       tag_ids = SnippetTag.where(:snippet_id => snippet.id).map(&:tag_id)
-      {
-        :id => snippet.id,
+      snippet_id = snippet.id
+      acc[snippet_id] = {
+        :id => snippet_id,
         :name => snippet.name,
         :content => snippet.content,
         :tags => tag_ids
       }
     end
+    acc
   end
 
   def create_snippet_tags(snippet_id, tag_ids)
