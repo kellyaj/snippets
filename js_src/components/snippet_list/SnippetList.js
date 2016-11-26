@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import '../../styles/SnippetList.css';
 
 import SnippetListItem from './SnippetListItem';
 

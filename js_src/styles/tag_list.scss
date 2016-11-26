@@ -1,7 +1,8 @@
 .TagList-container {
+  @include span-columns(2);
+
   background-color: gray;
   display: inline-block;
-  max-width: 20%;
   vertical-align: top;
 }
 
@@ -26,12 +27,6 @@
   background-color: #9ea080;
 }
 
-.SmallTagList-container {
-}
-
 .SmallTagList-list {
   list-style-type: none;
-}
-
-.SmallTagList-list-item {
 }

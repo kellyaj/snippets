@@ -1,6 +1,13 @@
 @import 'bourbon';
+@import 'grid-settings';
 @import 'neat';
-$green: #31D2B1;
 
-body {
+@import 'nav_header';
+@import 'tag_list';
+@import 'snippet_list';
+@import 'snippet_form';
+@import 'tag_form';
+
+.SnippetBoard-container {
+  @include outer-container;
 }

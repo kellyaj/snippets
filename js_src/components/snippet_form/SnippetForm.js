@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../../styles/SnippetForm.css'
 
 import SnippetTagSelection from './SnippetTagSelection'
 

@@ -1,5 +1,7 @@
 .NavHeader-container {
-  background-color: black;
+  @include span-columns(12);
+
+  background-color: $header;
   color: #fff;
   padding: 1em 1.3em;
 }
