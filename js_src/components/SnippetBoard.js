@@ -70,6 +70,7 @@ class SnippetBoard extends Component {
         <TagForm
           uiData={this.props.uiData}
           addTagHandler={this.addTagHandler.bind(this)}
+          toggleTagFormHandler={this.toggleTagFormHandler.bind(this)}
           key={"tf"}
         />
       )

@@ -1,7 +1,19 @@
 .TagForm-container {
   @include span-columns(3);
+
   background-color: $light;
   border: 1px solid #000;
-  margin: 1rem 0;
+  margin: 1rem;
+  padding: 0 1rem 1rem 1rem;
   transform: translateY(-100%);
+}
+
+.tag-form-field {
+  margin-bottom: 1rem;
+}
+
+.tag-form-menu {
+  cursor: pointer;
+  float: right;
+  padding: 1rem 0 0 0;
 }

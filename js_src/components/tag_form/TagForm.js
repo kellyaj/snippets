@@ -18,8 +18,11 @@ class TagForm extends Component {
   render() {
     return (
       <div className={this.determineClassNames()}>
+        <div className="tag-form-menu">
+          <i className="fa fa-trash-o" onClick={this.props.toggleTagFormHandler}></i>
+        </div>
         <h2>Add Tag</h2>
-        <div className="">
+        <div className="tag-form-field">
           Name: <input type="text" ref="tagNameInput"></input>
         </div>
         <div onClick={this.submitNewTag.bind(this)} className="action-button">
