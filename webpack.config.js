@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var bourbon = require('node-bourbon').includePaths;
+var neat = require('node-neat').includePaths[1];
 
 var config = module.exports = {
   context: __dirname,
@@ -45,7 +46,7 @@ config.module = {
     {
       test: /\.scss$/,
       include: [path.resolve(__dirname, './js_src'), path.resolve(__dirname, './node_modules')],
-      loader: "style!css!sass?includePaths[]=" + bourbon
+      loader: "style!css!sass?includePaths[]=" + bourbon + "&includePaths[]=" + neat
     }
   ]
 }
