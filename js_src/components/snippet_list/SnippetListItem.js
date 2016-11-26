@@ -20,6 +20,7 @@ class SnippetListItem extends Component {
         <SnippetCardMenu
           snippetId={id}
           isLocked={locked}
+          command={content}
           removeSnippetHandler={this.props.removeSnippetHandler}
           lockSnippetHandler={this.props.lockSnippetHandler}
         />
