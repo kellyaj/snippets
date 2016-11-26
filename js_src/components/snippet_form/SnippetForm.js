@@ -16,14 +16,22 @@ class SnippetForm extends Component {
     this.props.addSnippetHandler(snippetData)
   }
 
+  determineClassNames() {
+    const { showAddSnippetForm } = this.props.uiData
+    return `SnippetForm-container ${showAddSnippetForm ? "slide-down" : ""}`
+  }
+
   render() {
     return (
-      <div className="SnippetForm-container">
+      <div className={this.determineClassNames()}>
+        <div className="snippet-form-menu">
+          <i className="fa fa-trash-o" onClick={this.props.toggleSnippetFormHandler}></i>
+        </div>
         <h2>Add Snippet</h2>
-        <div className="">
+        <div className="snippet-form-field">
           Description: <input type="text" ref="nameInput"></input>
         </div>
-        <div className="">
+        <div className="snippet-form-field">
           Command: <input type="text" ref="contentInput"></input>
         </div>
         <SnippetTagSelection
@@ -31,7 +39,7 @@ class SnippetForm extends Component {
           addTagToNewSnippet={this.props.addTagToNewSnippet}
           removeTagFromNewSnippet={this.props.removeTagFromNewSnippet}
         />
-        <div onClick={this.submitNewSnippet.bind(this)} className="">
+        <div onClick={this.submitNewSnippet.bind(this)} className="action-button">
           Add Snippet
         </div>
       </div>

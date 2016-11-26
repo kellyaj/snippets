@@ -18,7 +18,7 @@ class TagForm extends Component {
         <div className="">
           Name: <input type="text" ref="tagNameInput"></input>
         </div>
-        <div onClick={this.submitNewTag.bind(this)} className="">
+        <div onClick={this.submitNewTag.bind(this)} className="action-button">
           Add Tag
         </div>
       </div>

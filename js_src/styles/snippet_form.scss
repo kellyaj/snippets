@@ -1,3 +1,61 @@
+.board-actions-container {
+  @include span-columns(12);
+
+  background-color: $inner-content;
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 0 2rem;
+}
+
+.action-button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 0.3em;
+  user-select: none;
+}
+
+.snippet-form-menu {
+  cursor: pointer;
+  float: right;
+  padding: 1rem 0 0 0;
+}
+
+.SnippetForm-container {
+  @include span-columns(6);
+
+  background-color: $card-color;
+  border: 1px solid #000;
+  margin: 1rem 0;
+  padding: 0 1rem 1rem 1rem;
+  transform: translateY(-100%);
+}
+
+.snippet-form-field {
+  padding: 1rem 0;
+}
+
 .SnippetTagSelection-list {
   list-style-type: none;
+}
+
+.slide-down {
+  animation: slide-down 0.1s forwards;
+}
+
+.slide-up {
+  animation: slide-up 0.8s forwards;
+}
+
+@keyframes slide-down {
+  100% { transform: translateY(0%); }
+}
+
+@keyframes slide-up {
+  0% { transform: translateY(0%); }
+  100% { transform: translateY(-100%); }
 }

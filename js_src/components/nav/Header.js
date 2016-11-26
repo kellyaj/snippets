@@ -13,7 +13,6 @@ class NavHeader extends Component {
   render() {
     return (
       <div className="NavHeader-container">
-        <h1>SnippetBoard</h1>
         <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
           { this.addSnippetLabel() }
         </div>
