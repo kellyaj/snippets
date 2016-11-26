@@ -8,6 +8,12 @@
 @import 'snippet_form';
 @import 'tag_form';
 
+body {
+  background-color: $darkest;
+}
+
 .SnippetBoard-container {
   @include outer-container;
+
+  background-color: $dark;
 }
