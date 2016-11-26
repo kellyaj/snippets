@@ -43,19 +43,19 @@
   list-style-type: none;
 }
 
-.slide-down {
-  animation: slide-down 0.1s forwards;
-}
-
-.slide-up {
-  animation: slide-up 0.8s forwards;
-}
-
 @keyframes slide-down {
   100% { transform: translateY(0%); }
+}
+
+.slide-down {
+  animation: slide-down 0.25s forwards;
 }
 
 @keyframes slide-up {
   0% { transform: translateY(0%); }
   100% { transform: translateY(-100%); }
+}
+
+.slide-up {
+  animation: slide-up 0.8s forwards;
 }

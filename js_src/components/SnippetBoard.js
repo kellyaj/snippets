@@ -81,7 +81,7 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.toggleTagFormHandler.bind(this)}
         />
-        <div className="board-actions-container">
+        <div className={`board-actions-container ${this.props.uiData.addSnippetFormClass}`}>
           { this.snippetFormContent() }
           { this.tagFormContent() }
         </div>

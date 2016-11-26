@@ -12,9 +12,15 @@ import {
 const uiDataReducer = (uiData = {}, action) => {
   switch(action.type) {
     case SHOW_ADD_SNIPPET_FORM:
-      return Object.assign({}, uiData, { showAddSnippetForm: true })
+      return Object.assign({}, uiData, {
+        showAddSnippetForm: true,
+        addSnippetFormClass: "slide-down"
+      })
     case HIDE_ADD_SNIPPET_FORM:
-      return Object.assign({}, uiData, { showAddSnippetForm: false })
+      return Object.assign({}, uiData, {
+        showAddSnippetForm: false,
+        addSnippetFormClass: "slide-up"
+      })
     case ADD_SNIPPET_SUCCESS:
       return Object.assign({}, uiData, { showAddSnippetForm: false })
     case SHOW_ADD_TAG_FORM:

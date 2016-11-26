@@ -4,7 +4,8 @@ const InitialState = {
   uiDataReducer: {
     showAddSnippetForm: false,
     showAddTagForm: false,
-    selectedTagId: null
+    selectedTagId: null,
+    addSnippetFormClass: ""
   },
   newSnippetReducer: { tags: [] }
 }

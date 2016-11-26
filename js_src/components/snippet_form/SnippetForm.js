@@ -17,8 +17,8 @@ class SnippetForm extends Component {
   }
 
   determineClassNames() {
-    const { showAddSnippetForm } = this.props.uiData
-    return `SnippetForm-container ${showAddSnippetForm ? "slide-down" : ""}`
+    const { addSnippetFormClass } = this.props.uiData
+    return `SnippetForm-container ${addSnippetFormClass}`
   }
 
   render() {
