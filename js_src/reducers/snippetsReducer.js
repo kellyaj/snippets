@@ -4,6 +4,7 @@ import {
   ADD_SNIPPET_SUCCESS,
   FILTER_SNIPPET_SUCCESS,
   REMOVE_SNIPPET_SUCCESS,
+  LOCK_SNIPPET_SUCCESS,
 } from '../actions/ActionTypes'
 
 const snippetsReducer = (snippets = {}, action) => {
@@ -18,7 +19,12 @@ const snippetsReducer = (snippets = {}, action) => {
     case FILTER_SNIPPET_SUCCESS:
       return Object.assign({}, {}, action.response)
     case REMOVE_SNIPPET_SUCCESS:
-      return _.omit(snippets, parseInt(action.response.id))
+      return !action.response.deleted ? snippets : _.omit(snippets, parseInt(action.response.id))
+    case LOCK_SNIPPET_SUCCESS:
+      const lockedSnippet = action.response
+      return Object.assign({}, snippets, {
+        [lockedSnippet.id]: lockedSnippet
+      })
     default:
       return snippets
   }

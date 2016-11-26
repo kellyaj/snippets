@@ -8,16 +8,20 @@ class SnippetCardMenu extends Component {
   }
 
   lockSnippet() {
-    // this is more of a toggle
-    // need to add locked bool to snippet model
-    const { snippetId } = this.props
+    const { snippetId, isLocked } = this.props
+    this.props.lockSnippetHandler(snippetId, !isLocked)
+  }
+
+  lockIcon() {
+    const { isLocked } = this.props
+    return `fa fa-${isLocked ? "lock" : "unlock-alt"}`
   }
 
   render() {
     return (
       <div className="SnippetCardMenu-container">
         <ul>
-          <li onClick={this.lockSnippet.bind(this)}>L</li>
+          <li onClick={this.lockSnippet.bind(this)}><i className={this.lockIcon()}></i></li>
           <li onClick={this.removeSnippet.bind(this)}><i className="fa fa-trash-o"></i></li>
         </ul>
       </div>
@@ -28,7 +32,8 @@ class SnippetCardMenu extends Component {
 SnippetCardMenu.propTypes = {
   snippetId: React.PropTypes.number.isRequired,
   removeSnippetHandler: React.PropTypes.func.isRequired,
-  lockSnippetHandler: React.PropTypes.func.isRequired
+  lockSnippetHandler: React.PropTypes.func.isRequired,
+  isLocked: React.PropTypes.bool.isRequired
 }
 
 module.exports = SnippetCardMenu

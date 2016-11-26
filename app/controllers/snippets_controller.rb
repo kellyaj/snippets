@@ -15,16 +15,24 @@ class SnippetsController < ApplicationController
     render :json => snippet.to_json
   end
 
+  def destroy
+    snippet = Snippet.find(params[:id])
+    snippet.destroy unless snippet.locked
+
+    render :json => { id: params[:id], deleted: snippet.destroyed? }.to_json
+  end
+
   def filter_by_id
     filtered_snippets = Tag.find(params[:tagId]).snippets
 
     render :json => build_snippets(filtered_snippets).to_json
   end
 
-  def destroy
-    Snippet.find(params[:id]).destroy
+  def toggle_snippet_lock
+    snippet = Snippet.find(params[:snippet_id])
+    snippet.update(locked: params[:should_lock])
 
-    render :json => { id: params[:id] }.to_json
+    render :json => build_snippets([snippet])[snippet.id].to_json
   end
 
   def build_snippets(snippets)
@@ -36,6 +44,7 @@ class SnippetsController < ApplicationController
         :id => snippet_id,
         :name => snippet.name,
         :content => snippet.content,
+        :locked => snippet.locked,
         :tags => tag_ids
       }
     end

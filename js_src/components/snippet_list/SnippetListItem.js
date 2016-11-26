@@ -6,12 +6,14 @@ class SnippetListItem extends Component {
     const {
       id,
       name,
-      content
+      content,
+      locked
     } = this.props.snippet
     return (
       <div className="SnippetList-card">
         <SnippetCardMenu
           snippetId={id}
+          isLocked={locked}
           removeSnippetHandler={this.props.removeSnippetHandler}
           lockSnippetHandler={this.props.lockSnippetHandler}
         />

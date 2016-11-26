@@ -42,8 +42,8 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.removeSnippet(snippetId))
   }
 
-  lockSnippetHandler(snippetId) {
-    return Store.dispatch(ActionCreators.toggleLockSnippet(snippetId))
+  lockSnippetHandler(snippetId, shouldLock) {
+    return Store.dispatch(ActionCreators.toggleLockSnippet(snippetId, shouldLock))
   }
 
   snippetFormContent() {

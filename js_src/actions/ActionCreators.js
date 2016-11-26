@@ -34,6 +34,9 @@ import {
   REMOVE_SNIPPET_REQUEST,
   REMOVE_SNIPPET_SUCCESS,
   REMOVE_SNIPPET_FAILURE,
+  LOCK_SNIPPET_REQUEST,
+  LOCK_SNIPPET_SUCCESS,
+  LOCK_SNIPPET_FAILURE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -146,7 +149,16 @@ class ActionCreators {
     }
   }
 
-  toggleLockSnippet(snippetId) {
+  toggleLockSnippet(snippetId, shouldLock) {
+    return {
+      type: LOCK_SNIPPET,
+      [CALL_API]: {
+        types: [ LOCK_SNIPPET_REQUEST, LOCK_SNIPPET_SUCCESS, LOCK_SNIPPET_FAILURE ],
+        endpoint: `/snippets/toggle_snippet_lock`,
+        httpMethod: 'POST',
+        requestData: { snippet_id: snippetId, should_lock: shouldLock }
+      }
+    }
   }
 
 }

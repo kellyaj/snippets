@@ -54,10 +54,40 @@ describe('snippetsReducer', () => {
     }
     const action = {
       type: REMOVE_SNIPPET_SUCCESS,
-      response: { id: snippetId }
+      response: { id: snippetId, deleted: true }
     }
     expect(
       snippetsReducer(snippets, action)
     ).to.eql({ "123": { name: "some snippet", id: "123" } })
+  })
+
+  it('does not removes snippets after ignored deletion', () => {
+    const snippetId = "456"
+    const snippets = {
+      "123": { name: "some snippet", id: "123" },
+      "456": { name: "snippet snip", id: snippetId }
+    }
+    const action = {
+      type: REMOVE_SNIPPET_SUCCESS,
+      response: { id: snippetId, deleted: false }
+    }
+    expect(
+      snippetsReducer(snippets, action)
+    ).to.eql(snippets)
+  })
+
+  it('does not removes snippets after ignored deletion', () => {
+    const snippetId = "456"
+    const snippets = {
+      "123": { name: "some snippet", id: "123" },
+      "456": { name: "snippet snip", id: snippetId }
+    }
+    const action = {
+      type: REMOVE_SNIPPET_SUCCESS,
+      response: { id: snippetId, deleted: false }
+    }
+    expect(
+      snippetsReducer(snippets, action)
+    ).to.eql(snippets)
   })
 })
