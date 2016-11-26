@@ -73,6 +73,7 @@
 
 .SnippetCardMenu-container > ul {
   list-style-type: none;
+  cursor: pointer;
 }
 
 .SnippetList-card-name {
