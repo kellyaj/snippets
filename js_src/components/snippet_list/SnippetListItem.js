@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import SnippetCardMenu from './SnippetCardMenu'
 
 class SnippetListItem extends Component {
+
+  cardClass() {
+    const cardClass = "small-snippet-card"
+    return `SnippetList-card ${cardClass}`
+  }
+
   render() {
     const {
       id,
@@ -10,7 +16,7 @@ class SnippetListItem extends Component {
       locked
     } = this.props.snippet
     return (
-      <div className="SnippetList-card">
+      <div className={this.cardClass()}>
         <SnippetCardMenu
           snippetId={id}
           isLocked={locked}
@@ -18,7 +24,9 @@ class SnippetListItem extends Component {
           lockSnippetHandler={this.props.lockSnippetHandler}
         />
         <div className="SnippetList-card-name">{name}</div>
-        <code>{content}</code>
+        <div className="snippet-card-content">
+          <code>{content}</code>
+        </div>
       </div>
     )
   }
