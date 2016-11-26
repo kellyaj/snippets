@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
@@ -57,6 +58,7 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           tags={this.props.tags}
           newSnippet={this.props.newSnippet}
+          key={"sf"}
         />
       )
     }
@@ -68,6 +70,7 @@ class SnippetBoard extends Component {
         <TagForm
           uiData={this.props.uiData}
           addTagHandler={this.addTagHandler.bind(this)}
+          key={"tf"}
         />
       )
     }
@@ -81,9 +84,11 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.toggleTagFormHandler.bind(this)}
         />
-        <div className={`board-actions-container ${this.props.uiData.addSnippetFormClass}`}>
-          { this.snippetFormContent() }
-          { this.tagFormContent() }
+        <div className={`board-actions-container ${""}`}>
+          <ReactCSSTransitionGroup transitionName="slideMe" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+            { this.snippetFormContent() }
+            { this.tagFormContent() }
+          </ReactCSSTransitionGroup>
         </div>
         <TagList
           tags={this.props.tags}
