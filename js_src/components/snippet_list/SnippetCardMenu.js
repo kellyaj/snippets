@@ -18,7 +18,7 @@ class SnippetCardMenu extends Component {
       <div className="SnippetCardMenu-container">
         <ul>
           <li onClick={this.lockSnippet.bind(this)}>L</li>
-          <li onClick={this.removeSnippet.bind(this)}>X</li>
+          <li onClick={this.removeSnippet.bind(this)}><i className="fa fa-trash-o"></i></li>
         </ul>
       </div>
     )
