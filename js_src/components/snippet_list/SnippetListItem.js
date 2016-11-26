@@ -3,20 +3,9 @@ import SnippetCardMenu from './SnippetCardMenu'
 
 class SnippetListItem extends Component {
 
-  determineCardClass() {
-    const { content } = this.props.snippet
-    const contentLength = content.length
-    if(contentLength < 20) {
-      return "small-snippet-card"
-    } else if(contentLength < 50) {
-      return "medium-snippet-card"
-    } else {
-      return "large-snippet-card"
-    }
-  }
-
   cardClass() {
-    return `SnippetList-card ${this.determineCardClass()}`
+    const { size } = this.props.snippet
+    return `SnippetList-card ${size}-snippet-card`
   }
 
   render() {

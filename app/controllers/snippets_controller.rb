@@ -45,6 +45,7 @@ class SnippetsController < ApplicationController
         :name => snippet.name,
         :content => snippet.content,
         :locked => snippet.locked,
+        :size => snippet.size,
         :tags => tag_ids
       }
     end
