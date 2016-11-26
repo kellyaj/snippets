@@ -42,7 +42,15 @@ code {
 }
 
 .small-snippet-card {
-  min-width: 150px;
+  @include span-columns(3);
+}
+
+.medium-snippet-card {
+  @include span-columns(6);
+}
+
+.large-snippet-card {
+  @include span-columns(9);
 }
 
 .hidden {
