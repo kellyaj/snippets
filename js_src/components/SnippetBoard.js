@@ -7,6 +7,7 @@ import TagForm from './tag_form/TagForm'
 import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
 import '../styles/SnippetBoard.css'
+import '../styles/app.scss'
 
 class SnippetBoard extends Component {
 

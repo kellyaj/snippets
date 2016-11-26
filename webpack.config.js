@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var bourbon = require('node-bourbon').includePaths;
 
 var config = module.exports = {
   context: __dirname,
@@ -40,6 +41,11 @@ config.module = {
       test: /\.css$/,
       include: [path.resolve(__dirname, './js_src'), path.resolve(__dirname, './node_modules')],
       loader: ExtractTextPlugin.extract('style', 'css?-autoprefixer!postcss')
+    },
+    {
+      test: /\.scss$/,
+      include: [path.resolve(__dirname, './js_src'), path.resolve(__dirname, './node_modules')],
+      loader: "style!css!sass?includePaths[]=" + bourbon
     }
   ]
 }
