@@ -24,9 +24,15 @@ const uiDataReducer = (uiData = {}, action) => {
     case ADD_SNIPPET_SUCCESS:
       return Object.assign({}, uiData, { showAddSnippetForm: false })
     case SHOW_ADD_TAG_FORM:
-      return Object.assign({}, uiData, { showAddTagForm: true })
+      return Object.assign({}, uiData, {
+        showAddTagForm: true,
+        addTagFormClass: "slide-down"
+      })
     case HIDE_ADD_TAG_FORM:
-      return Object.assign({}, uiData, { showAddTagForm: false })
+      return Object.assign({}, uiData, {
+        showAddTagForm: false,
+        addTagFormClass: "slide-up"
+      })
     case ADD_TAG_SUCCESS:
       return Object.assign({}, uiData, { showAddTagForm: false })
     case UPDATE_SELECTED_TAG:

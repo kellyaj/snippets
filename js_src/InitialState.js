@@ -5,7 +5,8 @@ const InitialState = {
     showAddSnippetForm: false,
     showAddTagForm: false,
     selectedTagId: null,
-    addSnippetFormClass: ""
+    addSnippetFormClass: "",
+    addTagFormClass: "",
   },
   newSnippetReducer: { tags: [] }
 }

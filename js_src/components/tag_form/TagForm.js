@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
 class TagForm extends Component {
+  determineClassNames() {
+    const { addTagFormClass } = this.props.uiData
+    return `TagForm-container ${addTagFormClass}`
+  }
 
   submitNewTag() {
     const nameValue = this.refs.tagNameInput.value
@@ -13,7 +17,7 @@ class TagForm extends Component {
 
   render() {
     return (
-      <div className="TagForm-container">
+      <div className={this.determineClassNames()}>
         <h2>Add Tag</h2>
         <div className="">
           Name: <input type="text" ref="tagNameInput"></input>

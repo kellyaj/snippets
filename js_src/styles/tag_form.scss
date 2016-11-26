@@ -1,0 +1,7 @@
+.TagForm-container {
+  @include span-columns(3);
+  background-color: $light;
+  border: 1px solid #000;
+  margin: 1rem 0;
+  transform: translateY(-100%);
+}
