@@ -20,17 +20,19 @@ describe('uiDataReducer', () => {
   })
 
   it('shows the add snippet form', () => {
+    const addSnippetClass = "slide-down"
     const action = { type: SHOW_ADD_SNIPPET_FORM }
     expect(
       uiDataReducer({ showAddSnippetForm: false }, action)
-    ).to.eql({ showAddSnippetForm: true })
+    ).to.eql({ showAddSnippetForm: true, addSnippetFormClass: addSnippetClass })
   })
 
   it('hides the add snippet form', () => {
+    const addSnippetClass = "slide-up"
     const action = { type: HIDE_ADD_SNIPPET_FORM }
     expect(
       uiDataReducer({ showAddSnippetForm: true }, action)
-    ).to.eql({ showAddSnippetForm: false })
+    ).to.eql({ showAddSnippetForm: false, addSnippetFormClass: addSnippetClass  })
   })
 
   it('hides the add snippet form action a snippet was added', () => {
@@ -41,17 +43,19 @@ describe('uiDataReducer', () => {
   })
 
   it('shows the add tag form', () => {
+    const addTagFormClass = "slide-down"
     const action = { type: SHOW_ADD_TAG_FORM }
     expect(
       uiDataReducer({ showAddTagForm: false }, action)
-    ).to.eql({ showAddTagForm: true })
+    ).to.eql({ showAddTagForm: true, addTagFormClass: addTagFormClass })
   })
 
   it('hides the add tag form', () => {
+    const addTagFormClass = "slide-up"
     const action = { type: HIDE_ADD_TAG_FORM }
     expect(
       uiDataReducer({ showAddTagForm: true }, action)
-    ).to.eql({ showAddTagForm: false })
+    ).to.eql({ showAddTagForm: false, addTagFormClass: addTagFormClass })
   })
 
   it('hides the add tag form action a tag was added', () => {

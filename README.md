@@ -10,5 +10,5 @@ Development
 ===
 - Run webpack: `webpack -d --display-reasons --display-chunks --progress --watch`
 - Run the rails server: `be rails server`
-- Run tests: `npm run tests`
+- Run tests: `npm run test`
 - Visit localhost:3000
