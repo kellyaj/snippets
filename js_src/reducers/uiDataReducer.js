@@ -9,6 +9,7 @@ import {
   UPDATE_SELECTED_TAG,
 } from '../actions/ActionTypes'
 
+
 const uiDataReducer = (uiData = {}, action) => {
   switch(action.type) {
     case SHOW_ADD_SNIPPET_FORM:
@@ -22,7 +23,12 @@ const uiDataReducer = (uiData = {}, action) => {
         addSnippetFormClass: "slide-up"
       })
     case ADD_SNIPPET_SUCCESS:
-      return Object.assign({}, uiData, { showAddSnippetForm: false })
+      return Object.assign({}, uiData, {
+        showAddSnippetForm: false,
+        displayFlashMessage: true,
+        flashMessage: "Snippet added successfully",
+        flashMessageClass: "success-flash-message"
+      })
     case SHOW_ADD_TAG_FORM:
       return Object.assign({}, uiData, {
         showAddTagForm: true,
@@ -34,7 +40,12 @@ const uiDataReducer = (uiData = {}, action) => {
         addTagFormClass: "slide-up"
       })
     case ADD_TAG_SUCCESS:
-      return Object.assign({}, uiData, { showAddTagForm: false })
+      return Object.assign({}, uiData, {
+        showAddTagForm: false,
+        displayFlashMessage: true,
+        flashMessage: "Tag added successfully",
+        flashMessageClass: "success-flash-message"
+      })
     case UPDATE_SELECTED_TAG:
       return Object.assign({}, uiData, { selectedTagId: action.tagId })
     default:

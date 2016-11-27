@@ -7,6 +7,9 @@ const InitialState = {
     selectedTagId: null,
     addSnippetFormClass: "",
     addTagFormClass: "",
+    displayFlashMessage: false,
+    flashMessage: "",
+    flashMessageClass: ""
   },
   newSnippetReducer: { tags: [] }
 }
