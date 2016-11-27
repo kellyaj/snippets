@@ -42,9 +42,7 @@ class SnippetTagSelection extends Component {
 }
 
 SnippetTagSelection.propTypes = {
-  tags: React.PropTypes.object.isRequired,
-  addTagToNewSnippet: React.PropTypes.func.isRequired,
-  removeTagFromNewSnippet: React.PropTypes.func.isRequired,
+  tags: React.PropTypes.object.isRequired
 }
 
 export default SnippetTagSelection

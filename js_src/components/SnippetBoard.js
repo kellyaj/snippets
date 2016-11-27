@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
-import SnippetForm from './snippet_form/SnippetForm'
-import TagForm from './tag_form/TagForm'
+import BoardActionMenu from './action_menu/BoardActionMenu'
 import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
 import '../styles/app.scss'
@@ -47,36 +45,6 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.toggleLockSnippet(snippetId, shouldLock))
   }
 
-  snippetFormContent() {
-    if(this.props.uiData.showAddSnippetForm) {
-      return (
-        <SnippetForm
-          uiData={this.props.uiData}
-          addSnippetHandler={this.addSnippetHandler.bind(this)}
-          addTagToNewSnippet={this.addTagToNewSnippetHandler.bind(this)}
-          removeTagFromNewSnippet={this.removeTagFromNewSnippetHandler.bind(this)}
-          toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
-          tags={this.props.tags}
-          newSnippet={this.props.newSnippet}
-          key={"sf"}
-        />
-      )
-    }
-  }
-
-  tagFormContent() {
-    if(this.props.uiData.showAddTagForm) {
-      return (
-        <TagForm
-          uiData={this.props.uiData}
-          addTagHandler={this.addTagHandler.bind(this)}
-          toggleTagFormHandler={this.toggleTagFormHandler.bind(this)}
-          key={"tf"}
-        />
-      )
-    }
-  }
-
   render() {
     return (
       <div className="SnippetBoard-container">
@@ -85,12 +53,17 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.toggleTagFormHandler.bind(this)}
         />
-        <div className={`board-actions-container ${""}`}>
-          <ReactCSSTransitionGroup transitionName="slideMe" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-            { this.snippetFormContent() }
-            { this.tagFormContent() }
-          </ReactCSSTransitionGroup>
-        </div>
+        <BoardActionMenu
+          uiData={this.props.uiData}
+          tags={this.props.tags}
+          newSnippet={this.props.newSnippet}
+          addTagHandler={this.addTagHandler.bind(this)}
+          toggleTagFormHandler={this.toggleTagFormHandler.bind(this)}
+          addSnippetHandler={this.addSnippetHandler.bind(this)}
+          addTagToNewSnippet={this.addTagToNewSnippetHandler.bind(this)}
+          removeTagFromNewSnippet={this.removeTagFromNewSnippetHandler.bind(this)}
+          toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
+        />
         <TagList
           tags={this.props.tags}
           uiData={this.props.uiData}
