@@ -37,6 +37,7 @@ import {
   LOCK_SNIPPET_REQUEST,
   LOCK_SNIPPET_SUCCESS,
   LOCK_SNIPPET_FAILURE,
+  REMOVE_FLASH_MESSAGE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -158,6 +159,12 @@ class ActionCreators {
         httpMethod: 'POST',
         requestData: { snippet_id: snippetId, should_lock: shouldLock }
       }
+    }
+  }
+
+  removeFlashMessage() {
+    return {
+      type: REMOVE_FLASH_MESSAGE
     }
   }
 

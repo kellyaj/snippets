@@ -7,6 +7,7 @@ import {
   ADD_TAG_SUCCESS,
   FILTER_BY_TAG_ID,
   UPDATE_SELECTED_TAG,
+  REMOVE_FLASH_MESSAGE,
 } from '../actions/ActionTypes'
 
 import {
@@ -54,6 +55,12 @@ const uiDataReducer = (uiData = {}, action) => {
       })
     case UPDATE_SELECTED_TAG:
       return Object.assign({}, uiData, { selectedTagId: action.tagId })
+    case REMOVE_FLASH_MESSAGE:
+      return Object.assign({}, uiData, {
+        displayFlashMessage: false,
+        flashMessage: "",
+        flashMessageClass: ""
+      })
     default:
       return uiData
   }

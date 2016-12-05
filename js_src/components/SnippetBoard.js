@@ -46,11 +46,16 @@ class SnippetBoard extends Component {
     return Store.dispatch(ActionCreators.toggleLockSnippet(snippetId, shouldLock))
   }
 
+  removeFlashMessage() {
+    return Store.dispatch(ActionCreators.removeFlashMessage())
+  }
+
   render() {
     return (
       <div className="SnippetBoard-container">
         <FlashArea
           uiData={this.props.uiData}
+          removeFlashMessage={this.removeFlashMessage.bind(this)}
         />
         <NavHeader
           uiData={this.props.uiData}

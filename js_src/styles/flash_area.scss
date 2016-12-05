@@ -17,3 +17,26 @@
 .success-flash-message {
   color: green;
 }
+
+.flashFadeOut-enter {
+  opacity: 0.01;
+}
+
+.flashFadeOut-enter.flashFadeOut-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.flashFadeOut-leave {
+  opacity: 1;
+}
+
+.flashFadeOut-leave.flashFadeOut-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.close-x {
+  color: #000;
+  margin-left: 0.7rem;
+}
