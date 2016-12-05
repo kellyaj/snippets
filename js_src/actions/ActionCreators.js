@@ -41,7 +41,8 @@ import {
   RETRIEVE_BOARDS,
   GET_BOARDS_REQUEST,
   GET_BOARDS_SUCCESS,
-  GET_BOARDS_FAILURE
+  GET_BOARDS_FAILURE,
+  SELECT_BOARD,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -65,12 +66,12 @@ class ActionCreators {
     }
   }
 
-  retrieveSnippets() {
+  retrieveSnippets(boardId) {
     return {
       type: RETRIEVE_SNIPPETS,
       [CALL_API]: {
         types: [ GET_SNIPPET_REQUEST, GET_SNIPPET_SUCCESS, GET_SNIPPET_FAILURE ],
-        endpoint: '/snippets',
+        endpoint: `/snippets?board_id=${boardId}`,
         httpMethod: 'GET',
       }
     }
@@ -96,12 +97,12 @@ class ActionCreators {
     }
   }
 
-  retrieveTags() {
+  retrieveTags(boardId) {
     return {
       type: RETRIEVE_TAGS,
       [CALL_API]: {
         types: [ GET_TAG_REQUEST, GET_TAG_SUCCESS, GET_TAG_FAILURE ],
-        endpoint: '/tags',
+        endpoint: `/tags?board_id=${boardId}`,
         httpMethod: 'GET',
       }
     }
@@ -183,7 +184,11 @@ class ActionCreators {
     }
   }
 
-  selectBoard(boardId) {
+  selectBoard(board) {
+    return {
+      type: SELECT_BOARD,
+      board: board
+    }
   }
 
 }

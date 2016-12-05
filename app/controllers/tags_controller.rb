@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    tags = Tag.all.map do |tag|
+    tags = Tag.where(:board_id => params[:board_id]).map do |tag|
       {
         :id => tag.id,
         :name => tag.name
@@ -14,7 +14,10 @@ class TagsController < ApplicationController
   end
 
   def create
-    tag = Tag.create(name: params[:name])
+    tag = Tag.create(
+      name: params[:name],
+      board_id: params[:board_id]
+    )
     render :json => tag.to_json
   end
 end

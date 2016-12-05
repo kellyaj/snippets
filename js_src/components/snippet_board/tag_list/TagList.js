@@ -7,7 +7,8 @@ import TagListItem from './TagListItem'
 class TagList extends Component {
 
   componentDidMount() {
-    return Store.dispatch(ActionCreators.retrieveTags())
+    const { id } = this.props.selectedBoard
+    return Store.dispatch(ActionCreators.retrieveTags(id))
   }
 
   displayAllTags() {

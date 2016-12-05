@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 class BoardListItem extends Component {
 
   selectBoard() {
-    const { id } = this.props.board
-    this.props.selectBoardHandler(id)
+    this.props.selectBoardHandler(this.props.board)
   }
 
   render() {

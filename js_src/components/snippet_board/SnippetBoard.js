@@ -10,7 +10,8 @@ import '../../styles/app.scss'
 class SnippetBoard extends Component {
 
   componentDidMount() {
-    return Store.dispatch(ActionCreators.retrieveSnippets())
+    const { id } = this.props.selectedBoard
+    return Store.dispatch(ActionCreators.retrieveSnippets(id))
   }
 
   toggleSnippetFormHandler() {
@@ -72,6 +73,7 @@ class SnippetBoard extends Component {
         <TagList
           tags={this.props.tags}
           uiData={this.props.uiData}
+          selectedBoard={this.props.selectedBoard}
         />
         <SnippetList
           snippets={this.props.snippets}

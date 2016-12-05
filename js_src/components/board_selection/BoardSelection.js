@@ -9,8 +9,8 @@ class BoardSelection extends Component {
     return Store.dispatch(ActionCreators.retrieveBoards())
   }
 
-  selectBoard(boardId) {
-    return Store.dispatch(ActionCreators.selectBoard(boardId))
+  selectBoard(board) {
+    return Store.dispatch(ActionCreators.selectBoard(board))
   }
 
   render() {

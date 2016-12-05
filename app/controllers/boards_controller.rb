@@ -19,6 +19,7 @@ class BoardsController < ApplicationController
       board_id = board.id
       acc[board_id] = {
         :name => board.name,
+        :id => board_id
       }
     end
     acc

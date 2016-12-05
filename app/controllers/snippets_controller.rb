@@ -3,13 +3,17 @@ class SnippetsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    snippets = build_snippets(Snippet.all)
+    snippets = build_snippets(Snippet.where(:board_id => params[:board_id]))
 
     render :json => snippets.to_json
   end
 
   def create
-    snippet = Snippet.create(name: params[:name], content: params[:content])
+    snippet = Snippet.create(
+      name: params[:name],
+      content: params[:content],
+      board_id: params[:board_id]
+    )
     create_snippet_tags(snippet.id, params[:tags])
 
     render :json => snippet.to_json
