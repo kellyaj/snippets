@@ -1,0 +1,4 @@
+.navigation-container {
+  @include span-columns(12);
+  background-color: red;
+}

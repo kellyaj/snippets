@@ -8,6 +8,7 @@
 @import 'snippet_form';
 @import 'tag_form';
 @import 'flash_area';
+@import 'navigation';
 
 body {
   background-color: $darkest;
@@ -19,7 +20,4 @@ body {
 }
 
 .SnippetBoard-container {
-  @include outer-container;
-
-  background-color: $dark;
 }

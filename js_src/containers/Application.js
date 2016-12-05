@@ -6,7 +6,9 @@ const mapStateToProps = (state) => {
     uiData: state.uiDataReducer,
     snippets: state.snippetsReducer,
     tags: state.tagsReducer,
-    newSnippet: state.newSnippetReducer
+    newSnippet: state.newSnippetReducer,
+    selectedBoard: state.selectedBoardReducer,
+    boards: state.boardsReducer,
   }
 }
 

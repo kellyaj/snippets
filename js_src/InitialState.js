@@ -11,7 +11,8 @@ const InitialState = {
     flashMessage: "",
     flashMessageClass: ""
   },
-  newSnippetReducer: { tags: [] }
+  newSnippetReducer: { tags: [] },
+  selectedBoardReducer: null
 }
 
 module.exports = InitialState

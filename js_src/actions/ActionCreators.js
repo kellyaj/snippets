@@ -38,6 +38,10 @@ import {
   LOCK_SNIPPET_SUCCESS,
   LOCK_SNIPPET_FAILURE,
   REMOVE_FLASH_MESSAGE,
+  RETRIEVE_BOARDS,
+  GET_BOARDS_REQUEST,
+  GET_BOARDS_SUCCESS,
+  GET_BOARDS_FAILURE
 } from './ActionTypes'
 
 class ActionCreators {
@@ -166,6 +170,20 @@ class ActionCreators {
     return {
       type: REMOVE_FLASH_MESSAGE
     }
+  }
+
+  retrieveBoards() {
+    return {
+      type: RETRIEVE_BOARDS,
+      [CALL_API]: {
+        types: [ GET_BOARDS_REQUEST, GET_BOARDS_SUCCESS, GET_BOARDS_FAILURE ],
+        endpoint: '/boards',
+        httpMethod: 'GET',
+      }
+    }
+  }
+
+  selectBoard(boardId) {
   }
 
 }
