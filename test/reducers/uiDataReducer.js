@@ -8,6 +8,7 @@ import {
   HIDE_ADD_TAG_FORM,
   ADD_TAG_SUCCESS,
   UPDATE_SELECTED_TAG,
+  REMOVE_FLASH_MESSAGE,
 } from '../../js_src/actions/ActionTypes'
 
 import {
@@ -88,6 +89,22 @@ describe('uiDataReducer', () => {
     expect(
       uiDataReducer({ selectedTagId: 44 }, action)
     ).to.eql({ selectedTagId: tagId })
+  })
+
+  it('resets the flash message', () => {
+    const action = { type: REMOVE_FLASH_MESSAGE }
+    const originalState = {
+      displayFlashMessage: true,
+      flashMessage: 'oh hello',
+      flashMessageClass: 'some-class'
+    }
+    expect(
+      uiDataReducer(originalState, action)
+    ).to.eql({
+      displayFlashMessage: false,
+      flashMessage: '',
+      flashMessageClass: ''
+    })
   })
 })
 
