@@ -1,17 +1,14 @@
 .flash-area {
-  @include span-columns(12)
-  min-height: 3rem;
+  display: inline-block;
+  margin-left: 2.5rem;
 }
 
 .flash-message-card {
-  @include span-columns(3)
-
   background-color: #fff;
-  padding: 0.5rem 0.5rem;
-  margin: 1rem 1rem;
-  text-align: center;
   border: 1px solid #fff;
   border-radius: 6px;
+  padding: 0.3rem 0.3rem;
+  text-align: center;
 }
 
 .success-flash-message {

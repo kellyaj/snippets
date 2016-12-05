@@ -3,7 +3,6 @@ import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
 import BoardActionMenu from './action_menu/BoardActionMenu'
-import FlashArea from './flash_area/FlashArea'
 import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
 import '../styles/app.scss'
@@ -53,14 +52,11 @@ class SnippetBoard extends Component {
   render() {
     return (
       <div className="SnippetBoard-container">
-        <FlashArea
-          uiData={this.props.uiData}
-          removeFlashMessage={this.removeFlashMessage.bind(this)}
-        />
         <NavHeader
           uiData={this.props.uiData}
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.toggleTagFormHandler.bind(this)}
+          removeFlashMessage={this.removeFlashMessage.bind(this)}
         />
         <BoardActionMenu
           uiData={this.props.uiData}

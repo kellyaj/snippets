@@ -1,3 +1,4 @@
+import FlashArea from '../flash_area/FlashArea'
 import React, { Component } from 'react';
 
 class NavHeader extends Component {
@@ -19,6 +20,10 @@ class NavHeader extends Component {
         <div onClick={this.props.addTagHandler} className="NavHeader-button">
           { this.addTagLabel() }
         </div>
+        <FlashArea
+          uiData={this.props.uiData}
+          removeFlashMessage={this.props.removeFlashMessage}
+        />
       </div>
     );
   }
