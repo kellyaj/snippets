@@ -8,10 +8,12 @@ class SnippetForm extends Component {
     const nameValue = this.refs.nameInput.value
     const contentValue = this.refs.contentInput.value
     const tagIds = this.props.newSnippet.tags
+    const { id } = this.props.selectedBoard
     const snippetData = {
       name: nameValue,
       content: contentValue,
-      tags: tagIds
+      tags: tagIds,
+      board_id: id,
     }
     this.props.addSnippetHandler(snippetData)
   }

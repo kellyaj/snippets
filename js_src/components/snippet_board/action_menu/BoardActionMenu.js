@@ -16,6 +16,7 @@ class BoardActionMenu extends Component {
           toggleSnippetFormHandler={this.props.toggleSnippetFormHandler}
           tags={this.props.tags}
           newSnippet={this.props.newSnippet}
+          selectedBoard={this.props.selectedBoard}
           key={"sf"}
         />
       )
@@ -29,6 +30,7 @@ class BoardActionMenu extends Component {
           uiData={this.props.uiData}
           addTagHandler={this.props.addTagHandler}
           toggleTagFormHandler={this.props.toggleTagFormHandler}
+          selectedBoard={this.props.selectedBoard}
           key={"tf"}
         />
       )
@@ -54,6 +56,7 @@ BoardActionMenu.propTypes = {
   addTagToNewSnippet: React.PropTypes.func.isRequired,
   removeTagFromNewSnippet: React.PropTypes.func.isRequired,
   addTagHandler: React.PropTypes.func.isRequired,
+  selectedBoard: React.PropTypes.object.isRequired,
 }
 
 export default BoardActionMenu

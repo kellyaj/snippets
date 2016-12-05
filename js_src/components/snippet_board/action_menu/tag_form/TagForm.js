@@ -9,8 +9,10 @@ class TagForm extends Component {
 
   submitNewTag() {
     const nameValue = this.refs.tagNameInput.value
+    const { id } = this.props.selectedBoard
     const tagData = {
       name: nameValue,
+      board_id: id
     }
     this.props.addTagHandler(tagData)
   }

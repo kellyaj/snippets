@@ -69,6 +69,7 @@ class SnippetBoard extends Component {
           addTagToNewSnippet={this.addTagToNewSnippetHandler.bind(this)}
           removeTagFromNewSnippet={this.removeTagFromNewSnippetHandler.bind(this)}
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
+          selectedBoard={this.props.selectedBoard}
         />
         <TagList
           tags={this.props.tags}
