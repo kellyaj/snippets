@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SnippetBoard from './SnippetBoard';
+import SnippetBoard from './snippet_board/SnippetBoard';
 
 class Application extends Component {
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash';
-import Store from '../../store/Store'
-import ActionCreators from '../../actions/ActionCreators'
+import Store from '../../../store/Store'
+import ActionCreators from '../../../actions/ActionCreators'
 import TagListItem from './TagListItem'
 
 class TagList extends Component {

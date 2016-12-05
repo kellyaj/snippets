@@ -3,9 +3,9 @@ import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
 import BoardActionMenu from './action_menu/BoardActionMenu'
-import Store from '../store/Store'
-import ActionCreators from '../actions/ActionCreators'
-import '../styles/app.scss'
+import Store from '../../store/Store'
+import ActionCreators from '../../actions/ActionCreators'
+import '../../styles/app.scss'
 
 class SnippetBoard extends Component {
 
