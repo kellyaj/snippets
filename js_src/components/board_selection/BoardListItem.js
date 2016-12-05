@@ -10,7 +10,10 @@ class BoardListItem extends Component {
     const { name } = this.props.board
     return (
       <div className="board-list-item-container" onClick={this.selectBoard.bind(this)}>
-        <div className="board-list-item-name">{ name }</div>
+        <div className="board-list-item-name">
+          <i className="fa fa-th-list board-list-item-icon"></i>
+          { name }
+        </div>
       </div>
     )
   }

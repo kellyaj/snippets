@@ -24,8 +24,10 @@ class BoardList extends Component {
   }
 
   render() {
+    const { listTitle} = this.props
     return (
       <div className="board-list-container">
+        <div className="board-list-header">{listTitle}</div>
         {this.buildBoardList()}
       </div>
     );

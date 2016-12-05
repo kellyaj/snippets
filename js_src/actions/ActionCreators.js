@@ -43,6 +43,7 @@ import {
   GET_BOARDS_SUCCESS,
   GET_BOARDS_FAILURE,
   SELECT_BOARD,
+  SHOW_BOARD_LIST,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -189,6 +190,10 @@ class ActionCreators {
       type: SELECT_BOARD,
       board: board
     }
+  }
+
+  showBoardList() {
+    return { type: SHOW_BOARD_LIST }
   }
 
 }

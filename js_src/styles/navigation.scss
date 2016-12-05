@@ -1,4 +1,17 @@
 .navigation-container {
   @include span-columns(12);
   background-color: red;
+  min-height: 3rem;
+}
+
+.navigation-button {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.3em;
+  margin: 1rem 0.5rem;
+  user-select: none;
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Store from '../../store/Store'
 import ActionCreators from '../../actions/ActionCreators'
 import BoardList from './BoardList'
-import '../../styles/app.scss'
 
 class BoardSelection extends Component {
   componentDidMount() {

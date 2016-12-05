@@ -5,7 +5,8 @@ class Navigation extends Component {
   render() {
     return (
       <div className="navigation-container">
-        im a nav
+        <div className="navigation-button" onClick={this.props.showBoardListHandler}>Board List</div>
+        <div className="navigation-button" onClick={() => {}}>New Board</div>
       </div>
     )
   }
