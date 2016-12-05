@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import DashBoard from '../components/SnippetBoard';
+import Application from '../components/Application';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,6 +10,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const SnippetBoard = connect(mapStateToProps)(DashBoard)
+const App = connect(mapStateToProps)(Application)
 
-export default SnippetBoard
+export default App

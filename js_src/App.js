@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import SnippetBoard from './containers/SnippetBoard'
+import Application from './containers/Application'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <SnippetBoard />
+        <Application />
       </div>
     )
   }
