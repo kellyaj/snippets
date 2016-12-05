@@ -10,6 +10,13 @@ import {
   UPDATE_SELECTED_TAG,
 } from '../../js_src/actions/ActionTypes'
 
+import {
+  ADD_SNIPPET_SUCCESS_FLASH_MESSAGE,
+  ADD_SNIPPET_SUCCESS_FLASH_CLASS,
+  ADD_TAG_SUCCESS_FLASH_MESSAGE,
+  ADD_TAG_SUCCESS_FLASH_CLASS
+} from '../../js_src/constants/ui'
+
 describe('uiDataReducer', () => {
   it('returns uiData by default', () => {
     const uiData = { someUiThing: true}
@@ -39,7 +46,12 @@ describe('uiDataReducer', () => {
     const action = { type: ADD_SNIPPET_SUCCESS }
     expect(
       uiDataReducer({ showAddSnippetForm: true }, action)
-    ).to.eql({ showAddSnippetForm: false })
+    ).to.eql({
+      showAddSnippetForm: false,
+      displayFlashMessage: true,
+      flashMessage: ADD_SNIPPET_SUCCESS_FLASH_MESSAGE,
+      flashMessageClass: ADD_SNIPPET_SUCCESS_FLASH_CLASS
+    })
   })
 
   it('shows the add tag form', () => {
@@ -62,7 +74,12 @@ describe('uiDataReducer', () => {
     const action = { type: ADD_TAG_SUCCESS }
     expect(
       uiDataReducer({ showAddTagForm: true }, action)
-    ).to.eql({ showAddTagForm: false })
+    ).to.eql({
+      showAddTagForm: false,
+      displayFlashMessage: true,
+      flashMessage: ADD_TAG_SUCCESS_FLASH_MESSAGE,
+      flashMessageClass: ADD_TAG_SUCCESS_FLASH_CLASS
+    })
   })
 
   it('sets the selectedTagId', () => {

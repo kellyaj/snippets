@@ -9,6 +9,12 @@ import {
   UPDATE_SELECTED_TAG,
 } from '../actions/ActionTypes'
 
+import {
+  ADD_SNIPPET_SUCCESS_FLASH_MESSAGE,
+  ADD_SNIPPET_SUCCESS_FLASH_CLASS,
+  ADD_TAG_SUCCESS_FLASH_MESSAGE,
+  ADD_TAG_SUCCESS_FLASH_CLASS
+} from '../constants/ui'
 
 const uiDataReducer = (uiData = {}, action) => {
   switch(action.type) {
@@ -26,8 +32,8 @@ const uiDataReducer = (uiData = {}, action) => {
       return Object.assign({}, uiData, {
         showAddSnippetForm: false,
         displayFlashMessage: true,
-        flashMessage: "Snippet added successfully",
-        flashMessageClass: "success-flash-message"
+        flashMessage: ADD_SNIPPET_SUCCESS_FLASH_MESSAGE,
+        flashMessageClass: ADD_SNIPPET_SUCCESS_FLASH_CLASS
       })
     case SHOW_ADD_TAG_FORM:
       return Object.assign({}, uiData, {
@@ -43,8 +49,8 @@ const uiDataReducer = (uiData = {}, action) => {
       return Object.assign({}, uiData, {
         showAddTagForm: false,
         displayFlashMessage: true,
-        flashMessage: "Tag added successfully",
-        flashMessageClass: "success-flash-message"
+        flashMessage: ADD_TAG_SUCCESS_FLASH_MESSAGE,
+        flashMessageClass: ADD_TAG_SUCCESS_FLASH_CLASS
       })
     case UPDATE_SELECTED_TAG:
       return Object.assign({}, uiData, { selectedTagId: action.tagId })
