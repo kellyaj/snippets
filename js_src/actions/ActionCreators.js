@@ -44,6 +44,11 @@ import {
   GET_BOARDS_FAILURE,
   SELECT_BOARD,
   SHOW_BOARD_LIST,
+  SHOW_NEW_BOARD_FORM,
+  CREATE_BOARD,
+  CREATE_BOARD_REQUEST,
+  CREATE_BOARD_SUCCESS,
+  CREATE_BOARD_FAILURE
 } from './ActionTypes'
 
 class ActionCreators {
@@ -194,6 +199,22 @@ class ActionCreators {
 
   showBoardList() {
     return { type: SHOW_BOARD_LIST }
+  }
+
+  showNewBoardForm() {
+    return { type: SHOW_NEW_BOARD_FORM }
+  }
+
+  createBoard(board) {
+    return {
+      type: CREATE_BOARD,
+      [CALL_API]: {
+        types: [ CREATE_BOARD_REQUEST, CREATE_BOARD_SUCCESS, CREATE_BOARD_FAILURE ],
+        endpoint: '/boards',
+        httpMethod: 'POST',
+        requestData: board
+      }
+    }
   }
 
 }

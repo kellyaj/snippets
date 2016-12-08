@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Store from '../../store/Store'
 import ActionCreators from '../../actions/ActionCreators'
 import BoardList from './BoardList'
+import NewBoardForm from './NewBoardForm'
 
 class BoardSelection extends Component {
   componentDidMount() {
@@ -10,6 +11,21 @@ class BoardSelection extends Component {
 
   selectBoard(board) {
     return Store.dispatch(ActionCreators.selectBoard(board))
+  }
+
+  createNewBoard(boardData) {
+    return Store.dispatch(ActionCreators.createBoard(boardData))
+  }
+
+  displayNewBoardForm() {
+    const { showNewBoardForm } = this.props.uiData
+    if(showNewBoardForm) {
+      return (
+        <NewBoardForm
+          createNewBoardHandler={this.createNewBoard.bind(this)}
+        />
+      )
+    }
   }
 
   render() {
@@ -21,6 +37,7 @@ class BoardSelection extends Component {
           listTitle={"Public Boards"}
           selectBoardHandler={this.selectBoard.bind(this)}
         />
+        { this.displayNewBoardForm() }
       </div>
     )
   }

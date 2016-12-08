@@ -11,6 +11,10 @@ class Application extends Component {
     return Store.dispatch(ActionCreators.showBoardList())
   }
 
+  showNewBoardForm() {
+    return Store.dispatch(ActionCreators.showNewBoardForm())
+  }
+
   renderPrimaryContent() {
     const { selectedBoard } = this.props
     if(selectedBoard) {
@@ -34,6 +38,7 @@ class Application extends Component {
         <Navigation
           {...this.props}
           showBoardListHandler={this.showBoardList}
+          showNewBoardFormHandler={this.showNewBoardForm}
         />
         { this.renderPrimaryContent() }
       </div>

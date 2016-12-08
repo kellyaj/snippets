@@ -8,6 +8,7 @@ import {
   FILTER_BY_TAG_ID,
   UPDATE_SELECTED_TAG,
   REMOVE_FLASH_MESSAGE,
+  SHOW_NEW_BOARD_FORM
 } from '../actions/ActionTypes'
 
 import {
@@ -60,6 +61,10 @@ const uiDataReducer = (uiData = {}, action) => {
         displayFlashMessage: false,
         flashMessage: "",
         flashMessageClass: ""
+      })
+    case SHOW_NEW_BOARD_FORM:
+      return Object.assign({}, uiData, {
+        showNewBoardForm: true,
       })
     default:
       return uiData

@@ -24,3 +24,9 @@
 .board-list-item-icon {
   margin: 0 1rem;
 }
+
+.new-board-form-container {
+  @include span-columns(6);
+
+  background-color: yellow;
+}

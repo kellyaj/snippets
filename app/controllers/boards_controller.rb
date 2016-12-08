@@ -8,9 +8,19 @@ class BoardsController < ApplicationController
   end
 
   def create
+    board = Board.create(
+      name: params[:name],
+      private: params[:private]
+    )
+
+    render :json => board.to_json
   end
 
   def destroy
+    board = Board.find(params[:id])
+    board.destroy
+
+    render :json => { id: params[:id], deleted: board.destroyed? }.to_json
   end
 
   def build_boards(boards)

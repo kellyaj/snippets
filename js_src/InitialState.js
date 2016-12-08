@@ -4,6 +4,7 @@ const InitialState = {
   uiDataReducer: {
     showAddSnippetForm: false,
     showAddTagForm: false,
+    showNewBoardForm: false,
     selectedTagId: null,
     addSnippetFormClass: "",
     addTagFormClass: "",
