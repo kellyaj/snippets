@@ -5,6 +5,7 @@ import {
   FILTER_SNIPPET_SUCCESS,
   REMOVE_SNIPPET_SUCCESS,
   LOCK_SNIPPET_SUCCESS,
+  SELECT_BOARD,
 } from '../actions/ActionTypes'
 
 const snippetsReducer = (snippets = {}, action) => {
@@ -25,6 +26,8 @@ const snippetsReducer = (snippets = {}, action) => {
       return Object.assign({}, snippets, {
         [lockedSnippet.id]: lockedSnippet
       })
+    case SELECT_BOARD:
+      return {}
     default:
       return snippets
   }

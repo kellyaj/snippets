@@ -1,6 +1,5 @@
 .board-selection {
-  @include span-columns(4);
-  background-color: #fff;
+  @include span-columns(12);
 }
 
 .board-list-container {
@@ -25,8 +24,20 @@
   margin: 0 1rem;
 }
 
+.board-section {
+  @include span-columns(4);
+  display: inline-block;
+  background-color: $light;
+}
+
+.side-content-section-container {
+  @include span-columns(8);
+}
+
 .new-board-form-container {
   @include span-columns(6);
-
-  background-color: yellow;
+  background-color: $light;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem;
 }
