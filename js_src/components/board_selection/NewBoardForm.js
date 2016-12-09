@@ -4,7 +4,6 @@ class NewBoardForm extends Component {
   submitNewBoard() {
     const nameValue = this.refs.nameInput.value
     const privateValue = this.refs.privateInput.value
-    console.log(privateValue)
     const boardData = {
       name: nameValue,
       private: privateValue === "on"

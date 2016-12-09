@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Store from '../../store/Store'
 import ActionCreators from '../../actions/ActionCreators'
-import BoardList from './BoardList'
-import NewBoardForm from './NewBoardForm'
+import BoardSection from './BoardSection'
+import SideContentSection from './SideContentSection'
 
 class BoardSelection extends Component {
   componentDidMount() {
@@ -17,27 +17,18 @@ class BoardSelection extends Component {
     return Store.dispatch(ActionCreators.createBoard(boardData))
   }
 
-  displayNewBoardForm() {
-    const { showNewBoardForm } = this.props.uiData
-    if(showNewBoardForm) {
-      return (
-        <NewBoardForm
-          createNewBoardHandler={this.createNewBoard.bind(this)}
-        />
-      )
-    }
-  }
-
   render() {
     const { boards } = this.props
     return (
       <div className="board-selection">
-        <BoardList
+        <BoardSection
           boards={boards}
-          listTitle={"Public Boards"}
           selectBoardHandler={this.selectBoard.bind(this)}
         />
-        { this.displayNewBoardForm() }
+        <SideContentSection
+          uiData={this.props.uiData}
+          createNewBoardHandler={this.createNewBoard.bind(this)}
+        />
       </div>
     )
   }

@@ -10,7 +10,7 @@ const InitialState = {
     addTagFormClass: "",
     displayFlashMessage: false,
     flashMessage: "",
-    flashMessageClass: ""
+    flashMessageClass: "",
   },
   newSnippetReducer: { tags: [] },
   selectedBoardReducer: null
