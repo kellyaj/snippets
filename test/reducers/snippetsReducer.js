@@ -3,7 +3,9 @@ import snippetsReducer from '../../js_src/reducers/snippetsReducer'
 import {
   ADD_SNIPPET_SUCCESS,
   GET_SNIPPET_SUCCESS,
-  REMOVE_SNIPPET_SUCCESS
+  REMOVE_SNIPPET_SUCCESS,
+  LOCK_SNIPPET_SUCCESS,
+  SELECT_BOARD,
 } from '../../js_src/actions/ActionTypes'
 
 describe('snippetsReducer', () => {
@@ -89,5 +91,35 @@ describe('snippetsReducer', () => {
     expect(
       snippetsReducer(snippets, action)
     ).to.eql(snippets)
+  })
+
+  it('has updated data for newly locked snippets', () => {
+    const snippetId = "456"
+    const snippets = {
+      "123": { name: "some snippet", locked: false },
+      "456": { name: "whatever", locked: false }
+    }
+    const action = {
+      type: LOCK_SNIPPET_SUCCESS,
+      response: {
+        id: snippetId,
+        name: "whatever",
+        locked: true
+      }
+    }
+    expect(
+      snippetsReducer(snippets, action)
+    ).to.eql({
+      "123": { name: "some snippet", locked: false },
+      "456": { name: "whatever", locked: true, id: snippetId }
+    })
+  })
+
+  it('removes all snippets when a new board is selected', () => {
+    const snippets = { "123": { name: "some snippet" }}
+    const action = { type: SELECT_BOARD }
+    expect(
+      snippetsReducer(snippets, action)
+    ).to.eql({})
   })
 })

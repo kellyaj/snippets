@@ -9,6 +9,9 @@ import {
   ADD_TAG_SUCCESS,
   UPDATE_SELECTED_TAG,
   REMOVE_FLASH_MESSAGE,
+  SHOW_NEW_BOARD_FORM,
+  HIDE_NEW_BOARD_FORM,
+  CREATE_BOARD_SUCCESS,
 } from '../../js_src/actions/ActionTypes'
 
 import {
@@ -105,6 +108,27 @@ describe('uiDataReducer', () => {
       flashMessage: '',
       flashMessageClass: ''
     })
+  })
+
+  it('shows the add new board form', () => {
+    const action = { type: SHOW_NEW_BOARD_FORM }
+    expect(
+      uiDataReducer({ showNewBoardForm: false }, action)
+    ).to.eql({ showNewBoardForm: true })
+  })
+
+  it('hides the add new board form', () => {
+    const action = { type: HIDE_NEW_BOARD_FORM }
+    expect(
+      uiDataReducer({ showNewBoardForm: true }, action)
+    ).to.eql({ showNewBoardForm: false })
+  })
+
+  it('hides the add new board form on create board success', () => {
+    const action = { type: CREATE_BOARD_SUCCESS }
+    expect(
+      uiDataReducer({ showNewBoardForm: true }, action)
+    ).to.eql({ showNewBoardForm: false })
   })
 })
 
