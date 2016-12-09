@@ -28,6 +28,7 @@ class BoardSelection extends Component {
         <SideContentSection
           uiData={this.props.uiData}
           createNewBoardHandler={this.createNewBoard.bind(this)}
+          toggleNewBoardFormHandler={this.props.toggleNewBoardFormHandler}
         />
       </div>
     )

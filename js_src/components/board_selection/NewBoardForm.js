@@ -14,6 +14,7 @@ class NewBoardForm extends Component {
   render() {
     return (
       <div className="new-board-form-container">
+        <i className="fa fa-times close-x" onClick={this.props.toggleNewBoardFormHandler}></i>
         <div className="new-board-form-title">Add new board</div>
         <div className="board-form-field">
           Name: <input type="text" ref="nameInput"></input>

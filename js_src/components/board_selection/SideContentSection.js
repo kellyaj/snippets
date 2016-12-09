@@ -8,6 +8,7 @@ class SideContentSection extends Component {
       return (
         <NewBoardForm
           createNewBoardHandler={this.props.createNewBoardHandler}
+          toggleNewBoardFormHandler={this.props.toggleNewBoardFormHandler}
         />
       )
     }

@@ -9,6 +9,7 @@ import {
   UPDATE_SELECTED_TAG,
   REMOVE_FLASH_MESSAGE,
   SHOW_NEW_BOARD_FORM,
+  HIDE_NEW_BOARD_FORM,
   CREATE_BOARD_SUCCESS,
 } from '../actions/ActionTypes'
 
@@ -66,6 +67,10 @@ const uiDataReducer = (uiData = {}, action) => {
     case SHOW_NEW_BOARD_FORM:
       return Object.assign({}, uiData, {
         showNewBoardForm: true,
+      })
+    case HIDE_NEW_BOARD_FORM:
+      return Object.assign({}, uiData, {
+        showNewBoardForm: false,
       })
     case CREATE_BOARD_SUCCESS:
       return Object.assign({}, uiData, {

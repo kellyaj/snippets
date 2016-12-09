@@ -11,8 +11,9 @@ class Application extends Component {
     return Store.dispatch(ActionCreators.showBoardList())
   }
 
-  showNewBoardForm() {
-    return Store.dispatch(ActionCreators.showNewBoardForm())
+  toggleNewBoardForm() {
+    const { showNewBoardForm } = this.props.uiData
+    return Store.dispatch(ActionCreators.toggleNewBoardForm(!showNewBoardForm))
   }
 
   renderPrimaryContent() {
@@ -27,6 +28,7 @@ class Application extends Component {
       return (
         <BoardSelection
           {...this.props}
+          toggleNewBoardFormHandler={this.toggleNewBoardForm.bind(this)}
         />
       )
     }
@@ -37,8 +39,8 @@ class Application extends Component {
       <div className="app-container">
         <Navigation
           {...this.props}
-          showBoardListHandler={this.showBoardList}
-          showNewBoardFormHandler={this.showNewBoardForm}
+          showBoardListHandler={this.showBoardList.bind(this)}
+          toggleNewBoardFormHandler={this.toggleNewBoardForm.bind(this)}
         />
         { this.renderPrimaryContent() }
       </div>

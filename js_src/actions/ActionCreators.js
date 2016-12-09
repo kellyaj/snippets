@@ -45,6 +45,7 @@ import {
   SELECT_BOARD,
   SHOW_BOARD_LIST,
   SHOW_NEW_BOARD_FORM,
+  HIDE_NEW_BOARD_FORM,
   CREATE_BOARD,
   CREATE_BOARD_REQUEST,
   CREATE_BOARD_SUCCESS,
@@ -201,8 +202,12 @@ class ActionCreators {
     return { type: SHOW_BOARD_LIST }
   }
 
-  showNewBoardForm() {
-    return { type: SHOW_NEW_BOARD_FORM }
+  toggleNewBoardForm(showForm) {
+    if(showForm) {
+      return { type: SHOW_NEW_BOARD_FORM };
+    } else {
+      return { type: HIDE_NEW_BOARD_FORM };
+    }
   }
 
   createBoard(board) {
