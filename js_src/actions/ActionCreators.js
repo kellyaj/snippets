@@ -49,7 +49,14 @@ import {
   CREATE_BOARD,
   CREATE_BOARD_REQUEST,
   CREATE_BOARD_SUCCESS,
-  CREATE_BOARD_FAILURE
+  CREATE_BOARD_FAILURE,
+  SET_SLUG,
+  CLEAR_SLUG,
+  RETRIEVE_SLUG,
+  DISPLAY_SLUG,
+  DISPLAY_SLUG_REQUEST,
+  DISPLAY_SLUG_SUCCESS,
+  DISPLAY_SLUG_FAILURE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -220,6 +227,21 @@ class ActionCreators {
         requestData: board
       }
     }
+  }
+
+  displaySlug(slug) {
+    return {
+      type: RETRIEVE_SLUG,
+      [CALL_API]: {
+        types: [ DISPLAY_SLUG_REQUEST, DISPLAY_SLUG_SUCCESS, DISPLAY_SLUG_FAILURE ],
+        endpoint: `/boards/by_slug?slug=${slug}`,
+        httpMethod: 'get',
+      }
+    }
+  }
+
+  clearSlug() {
+    return { type: CLEAR_SLUG }
   }
 
 }

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     get :index
   end
 
+  get 'boards/by_slug', to: 'boards#by_slug'
   resources :boards
 
   post 'snippets/toggle_snippet_lock', to: 'snippets#toggle_snippet_lock'
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :tags
 
   root :to => "dashboard#index"
+  get '(*slug)' => 'dashboard#index'
 end

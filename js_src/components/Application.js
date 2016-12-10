@@ -7,6 +7,13 @@ import Navigation from './navigation/Navigation'
 
 class Application extends Component {
 
+  componentDidMount() {
+    const slug = window.location.pathname.split("/")[1]
+    if(slug.length > 0) {
+       return Store.dispatch(ActionCreators.displaySlug(slug))
+    }
+  }
+
   showBoardList() {
     return Store.dispatch(ActionCreators.showBoardList())
   }
