@@ -12,6 +12,7 @@
   display: inline-block;
   padding: 1em;
   margin: 0.4em;
+  min-height: 7.5rem;
 }
 
 .SnippetCardMenu-container {
@@ -30,10 +31,15 @@
 
 .SnippetList-card-name {
   margin: 1em 0;
+  font-size: 1rem;
+  cursor: default;
+  user-select: none;
+  white-space: nowrap;
 }
 
 .snippet-card-content {
   text-align: center;
+  white-space: nowrap;
 }
 
 code {
@@ -46,11 +52,11 @@ code {
 }
 
 .medium-snippet-card {
-  @include span-columns(6);
+  @include span-columns(5);
 }
 
 .large-snippet-card {
-  @include span-columns(9);
+  @include span-columns(10);
 }
 
 .hidden {
