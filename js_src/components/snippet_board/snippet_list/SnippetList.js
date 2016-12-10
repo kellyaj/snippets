@@ -16,7 +16,8 @@ class SnippetList extends Component {
   }
 
   buildSnippetList() {
-    const snippets = _.map(this.props.snippets, this.buildListItem.bind(this));
+    const sortedSnippets = _.sortBy(this.props.snippets, ['snippet', 'size'])
+    const snippets = _.map(sortedSnippets, this.buildListItem.bind(this));
     return (
       <div>
         { snippets }
