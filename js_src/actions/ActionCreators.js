@@ -122,8 +122,8 @@ class ActionCreators {
     }
   }
 
-  displayAllTags() {
-    return this.retrieveSnippets()
+  displayAllTags(boardId) {
+    return this.retrieveSnippets(boardId)
   }
 
   displayOnlyTag(tagId) {

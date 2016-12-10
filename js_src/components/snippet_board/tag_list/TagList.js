@@ -12,8 +12,9 @@ class TagList extends Component {
   }
 
   displayAllTags() {
+    const { id } = this.props.selectedBoard
     Store.dispatch((dispatch) => {
-      return dispatch(ActionCreators.displayAllTags()).then(() => {
+      return dispatch(ActionCreators.displayAllTags(id)).then(() => {
         return dispatch(ActionCreators.changeSelectedTag(null))
       })
     })

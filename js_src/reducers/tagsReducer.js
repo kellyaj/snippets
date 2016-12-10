@@ -3,6 +3,7 @@ import {
   GET_TAG_SUCCESS,
   ADD_TAG_SUCCESS,
   FILTER_BY_TAG_ID,
+  SHOW_BOARD_LIST,
 } from '../actions/ActionTypes'
 
 const tagsReducer = (tags = {}, action) => {
@@ -19,6 +20,8 @@ const tagsReducer = (tags = {}, action) => {
       return Object.assign({}, {}, {
         [t.id]: t
       })
+    case SHOW_BOARD_LIST:
+      return {}
     default:
       return tags
   }
