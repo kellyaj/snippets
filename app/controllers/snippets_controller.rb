@@ -14,7 +14,7 @@ class SnippetsController < ApplicationController
       content: params[:content],
       board_id: params[:board_id]
     )
-    create_snippet_tags(snippet.id, params[:tags])
+    create_snippet_tags(snippet.id, params[:tags]) unless params[:tags].nil?
 
     render :json => snippet.to_json
   end
