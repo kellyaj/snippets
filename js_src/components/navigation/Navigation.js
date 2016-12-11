@@ -10,6 +10,10 @@ class Navigation extends Component {
     return this.props.uiData.showNewBoardForm ? 'Cancel New Board' : 'Add New Board'
   }
 
+  cloneBoardLabel() {
+    return 'Clone Board'
+  }
+
   render() {
     return (
       <div className="navigation-container">
@@ -18,6 +22,9 @@ class Navigation extends Component {
         </div>
         <div className="navigation-button" onClick={this.props.toggleNewBoardFormHandler}>
           { this.newBoardLabel() }
+        </div>
+        <div className="navigation-button" onClick={() => {}}>
+          { this.cloneBoardLabel() }
         </div>
       </div>
     )

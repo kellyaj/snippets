@@ -2,7 +2,7 @@ class BoardsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def index
-    boards = build_boards(Board.all)
+    boards = build_boards(Board.where(:private => false))
 
     render :json => boards.to_json
   end
