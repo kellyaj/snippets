@@ -16,7 +16,7 @@ class SnippetsController < ApplicationController
     )
     create_snippet_tags(snippet.id, params[:tags]) unless params[:tags].nil?
 
-    render :json => snippet.to_json
+    render :json => build_single_snippet(snippet).to_json
   end
 
   def destroy
@@ -36,7 +36,11 @@ class SnippetsController < ApplicationController
     snippet = Snippet.find(params[:snippet_id])
     snippet.update(locked: params[:should_lock])
 
-    render :json => build_snippets([snippet])[snippet.id].to_json
+    render :json => build_single_snippet(snippet).to_json
+  end
+
+  def build_single_snippet(snippet)
+    build_snippets([snippet])[snippet.id]
   end
 
   def build_snippets(snippets)
