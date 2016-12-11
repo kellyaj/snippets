@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
       private: params[:private],
     )
 
-    render :json => board.to_json
+    render :json => build_singular_board(board).to_json
   end
 
   def destroy
@@ -26,7 +26,11 @@ class BoardsController < ApplicationController
   def by_slug
     board = Board.find_by(slug: params[:slug])
 
-    render :json => build_boards([board])[board.id].to_json if board
+    render :json => build_singular_board(board).to_json if board
+  end
+
+  def build_singular_board(board)
+    build_boards([board])[board.id]
   end
 
   def build_boards(boards)
@@ -36,7 +40,8 @@ class BoardsController < ApplicationController
       acc[board_id] = {
         :name => board.name,
         :id => board_id,
-        :slug => board.slug
+        :slug => board.slug,
+        :snippetCount => board.snippets.count.to_s
       }
     end
     acc

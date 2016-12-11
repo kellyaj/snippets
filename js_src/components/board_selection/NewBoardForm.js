@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 class NewBoardForm extends Component {
   submitNewBoard() {
     const nameValue = this.refs.nameInput.value
-    const privateValue = this.refs.privateInput.value
+    const privateValue = this.refs.privateInput.checked
     const boardData = {
       name: nameValue,
-      private: privateValue === "on"
+      private: privateValue
     }
     this.props.createNewBoardHandler(boardData)
   }

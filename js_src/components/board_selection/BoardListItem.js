@@ -6,13 +6,17 @@ class BoardListItem extends Component {
     this.props.selectBoardHandler(this.props.board)
   }
 
+  displayLabel() {
+    const { name, snippetCount } = this.props.board
+    return `${name} (${snippetCount})`
+  }
+
   render() {
-    const { name } = this.props.board
     return (
       <div className="board-list-item-container" onClick={this.selectBoard.bind(this)}>
         <div className="board-list-item-name">
           <i className="fa fa-th-list board-list-item-icon"></i>
-          { name }
+          { this.displayLabel() }
         </div>
       </div>
     )
