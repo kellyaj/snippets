@@ -225,7 +225,7 @@ class ActionCreators {
       [CALL_API]: {
         types: [ DISPLAY_SLUG_REQUEST, DISPLAY_SLUG_SUCCESS, DISPLAY_SLUG_FAILURE ],
         endpoint: `/boards/by_slug?slug=${slug}`,
-        httpMethod: 'get',
+        httpMethod: 'GET',
       }
     }
   }
@@ -240,18 +240,19 @@ class ActionCreators {
       [CALL_API]: {
         types: [ JUMP_TO_SLUG_REQUEST, JUMP_TO_SLUG_SUCCESS, JUMP_TO_SLUG_FAILURE ],
         endpoint: `/boards/by_slug?slug=${slug}`,
-        httpMethod: 'get',
+        httpMethod: 'GET',
       }
     }
   }
 
-  cloneBoard(slug) {
+  cloneBoard(slugData) {
     return {
       type: CLONE_BOARD,
       [CALL_API]: {
         types: [ CLONE_BOARD_REQUEST, CLONE_BOARD_SUCCESS, CLONE_BOARD_FAILURE ],
-        endpoint: `/boards/clone?slug=${slug}`,
-        httpMethod: 'post',
+        endpoint: `/boards/clone`,
+        httpMethod: 'POST',
+        requestData: slugData
       }
     }
   }

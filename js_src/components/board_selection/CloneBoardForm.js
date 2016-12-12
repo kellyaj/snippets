@@ -4,7 +4,12 @@ class CloneBoardForm extends Component {
 
   cloneBoard() {
     const slug = this.refs.slugInput.value
-    this.props.cloneBoardHandler(slug)
+    const privateValue = this.refs.privateInput.checked
+    const cloneData = {
+      slug: slug,
+      isPrivate: privateValue
+    }
+    this.props.cloneBoardHandler(cloneData)
   }
 
   render() {
@@ -14,6 +19,9 @@ class CloneBoardForm extends Component {
         <h2>Clone Board by Slug</h2>
         <div className="slug-form-field">
           slug: <input type="text" ref="slugInput"></input>
+        </div>
+        <div className="slug-form-field">
+          Private: <input type="checkbox" ref="privateInput"></input>
         </div>
         <div onClick={this.cloneBoard.bind(this)} className="action-button">
           Clone

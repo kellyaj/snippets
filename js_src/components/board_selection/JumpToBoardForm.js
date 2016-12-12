@@ -11,7 +11,7 @@ class JumpToBoardForm extends Component {
     return (
       <div className="board-by-slug-card-container">
         <i className="fa fa-times board-close-x" onClick={this.props.toggleJumpFormHandler}></i>
-        <h2>Jump to Board by Slug</h2>
+        <h2>Jump to Board</h2>
         <div className="slug-form-field">
           slug: <input type="text" ref="slugInput"></input>
         </div>

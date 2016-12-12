@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   get 'boards/by_slug', to: 'boards#by_slug'
+  post 'boards/clone', to: 'boards#clone'
   resources :boards
 
   post 'snippets/toggle_snippet_lock', to: 'snippets#toggle_snippet_lock'
