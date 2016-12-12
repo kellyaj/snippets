@@ -1,6 +1,5 @@
 .NavHeader-container {
   @include span-columns(12);
-
   background-color: $dark;
   color: $light;
   padding: 1em 1.3em;
