@@ -15,6 +15,26 @@ body {
   background-color: $darkest;
 }
 
+.outer-navigation {
+  @include span-columns(12);
+  background-color: #000;
+  color: #fff;
+  min-height: 2rem;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  a, u {
+    text-decoration: none;
+  }
+}
+
 .app-container {
   @include outer-container;
   background-color: $dark;

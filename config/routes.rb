@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     get :index
   end
 
+  get '/about', to: 'dashboard#about'
   get 'boards/by_slug', to: 'boards#by_slug'
   post 'boards/clone', to: 'boards#clone'
   resources :boards
