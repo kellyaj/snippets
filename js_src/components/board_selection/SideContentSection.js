@@ -58,6 +58,7 @@ SideContentSection.propTypes = {
   toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
   toggleJumpFormHandler: React.PropTypes.func.isRequired,
   cloneBoardHandler: React.PropTypes.func.isRequired,
+  toggleCloneBoardFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default SideContentSection

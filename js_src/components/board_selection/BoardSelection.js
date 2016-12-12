@@ -48,6 +48,7 @@ BoardSelection.propTypes = {
   jumpToSlugHandler: React.PropTypes.func.isRequired,
   toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
   toggleJumpFormHandler: React.PropTypes.func.isRequired,
+  toggleCloneBoardFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default BoardSelection

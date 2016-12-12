@@ -72,13 +72,6 @@ import {
 } from './ActionTypes'
 
 class ActionCreators {
-  toggleSnippetForm(showForm) {
-    if(showForm) {
-      return { type: SHOW_ADD_SNIPPET_FORM };
-    } else {
-      return { type: HIDE_ADD_SNIPPET_FORM };
-    }
-  }
 
   addNewSnippet(snippet) {
     return {
@@ -103,13 +96,6 @@ class ActionCreators {
     }
   }
 
-  toggleTagForm(showForm) {
-    if(showForm) {
-      return { type: SHOW_ADD_TAG_FORM };
-    } else {
-      return { type: HIDE_ADD_TAG_FORM };
-    }
-  }
 
   addNewTag(tag) {
     return {
@@ -221,14 +207,6 @@ class ActionCreators {
     return { type: SHOW_BOARD_LIST }
   }
 
-  toggleNewBoardForm(showForm) {
-    if(showForm) {
-      return { type: SHOW_NEW_BOARD_FORM };
-    } else {
-      return { type: HIDE_NEW_BOARD_FORM };
-    }
-  }
-
   createBoard(board) {
     return {
       type: CREATE_BOARD,
@@ -267,14 +245,6 @@ class ActionCreators {
     }
   }
 
-  toggleCloneBoardForm(showForm) {
-    if(showForm) {
-      return { type: SHOW_CLONE_BOARD_FORM };
-    } else {
-      return { type: HIDE_CLONE_BOARD_FORM };
-    }
-  }
-
   cloneBoard(slug) {
     return {
       type: CLONE_BOARD,
@@ -286,12 +256,28 @@ class ActionCreators {
     }
   }
 
+  toggleAction(showForm, showClass, hideClass) {
+    return showForm ? { type: showClass } : { type: hideClass }
+  }
+
   toggleJumpForm(showForm) {
-    if(showForm) {
-      return { type: SHOW_JUMP_FORM };
-    } else {
-      return { type: HIDE_JUMP_FORM };
-    }
+    return this.toggleAction(showForm, SHOW_JUMP_FORM, HIDE_JUMP_FORM)
+  }
+
+  toggleCloneBoardForm(showForm) {
+    return this.toggleAction(showForm, SHOW_CLONE_BOARD_FORM, HIDE_CLONE_BOARD_FORM)
+  }
+
+  toggleNewBoardForm(showForm) {
+    return this.toggleAction(showForm, SHOW_NEW_BOARD_FORM, HIDE_NEW_BOARD_FORM)
+  }
+
+  toggleTagForm(showForm) {
+    return this.toggleAction(showForm, SHOW_ADD_TAG_FORM, HIDE_ADD_TAG_FORM)
+  }
+
+  toggleSnippetForm(showForm) {
+    return this.toggleAction(showForm, SHOW_ADD_SNIPPET_FORM, HIDE_ADD_SNIPPET_FORM)
   }
 
 }

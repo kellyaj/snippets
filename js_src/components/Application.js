@@ -52,6 +52,7 @@ class Application extends Component {
           toggleNewBoardFormHandler={this.toggleNewBoardForm.bind(this)}
           jumpToSlugHandler={this.jumpToSlug.bind(this)}
           toggleJumpFormHandler={this.toggleJumpForm.bind(this)}
+          toggleCloneBoardFormHandler={this.toggleCloneBoardForm.bind(this)}
         />
       )
     }

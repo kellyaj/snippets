@@ -38,7 +38,7 @@
 }
 
 .new-board-form-container {
-  @include span-columns(4);
+  @include span-columns(3);
   background-color: $light;
   display: inline-block;
   margin-top: 1rem;
