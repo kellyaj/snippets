@@ -1,5 +1,6 @@
 .board-selection {
   @include span-columns(12);
+  user-select: none;
 }
 
 .board-list-container {

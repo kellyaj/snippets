@@ -16,7 +16,7 @@ class CloneBoardForm extends Component {
     return (
       <div className="clone-board-form-container">
         <i className="fa fa-times board-close-x" onClick={this.props.toggleCloneBoardFormHandler}></i>
-        <h2>Clone Board by Slug</h2>
+        <h2>Clone Board</h2>
         <div className="slug-form-field">
           slug: <input type="text" ref="slugInput"></input>
         </div>
