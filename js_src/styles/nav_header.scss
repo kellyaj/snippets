@@ -24,9 +24,11 @@
 }
 
 .board-title-name {
+  color: $card-color;
   font-weight: 900;
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 3px $darkest;
 }
 
 .board-title-slug {

@@ -2,6 +2,7 @@
 @import 'grid-settings';
 @import 'neat';
 
+@import 'shared';
 @import 'nav_header';
 @import 'tag_list';
 @import 'snippet_list';
@@ -38,7 +39,5 @@ body {
 .app-container {
   @include outer-container;
   background-color: $dark;
-}
-
-.SnippetBoard-container {
+  border: 1px solid $light;
 }
