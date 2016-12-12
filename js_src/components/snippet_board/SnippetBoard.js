@@ -58,6 +58,8 @@ class SnippetBoard extends Component {
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
           addTagHandler={this.toggleTagFormHandler.bind(this)}
           removeFlashMessage={this.removeFlashMessage.bind(this)}
+          boardName={this.props.selectedBoard.name}
+          boardSlug={this.props.selectedBoard.slug}
         />
         <BoardActionMenu
           uiData={this.props.uiData}

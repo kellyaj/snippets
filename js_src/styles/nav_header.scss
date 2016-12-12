@@ -17,3 +17,19 @@
   margin: 0 0.4em;
   user-select: none;
 }
+
+.board-title-container {
+  @include span-columns(4)
+  float: left;
+}
+
+.board-title-name {
+  font-weight: 900;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.board-title-slug {
+  font-weight: 400;
+  font-size: 0.8rem;
+}

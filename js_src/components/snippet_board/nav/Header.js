@@ -11,9 +11,20 @@ class NavHeader extends Component {
     return this.props.uiData.showAddTagForm ? 'Cancel New Tag' : 'Add New Tag'
   }
 
+  boardTitle() {
+    const { boardName, boardSlug } = this.props
+    return (
+      <div className="board-title-container">
+        <div className="board-title-name main-title">{ boardName }</div>
+        <div className="board-title-slug">{ boardSlug }</div>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="NavHeader-container">
+        { this.boardTitle() }
         <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
           { this.addSnippetLabel() }
         </div>
