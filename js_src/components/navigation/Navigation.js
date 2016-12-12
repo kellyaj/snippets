@@ -14,15 +14,23 @@ class Navigation extends Component {
     return 'Clone Board'
   }
 
+  newBoard() {
+    if(!this.props.selectedBoard) {
+      return (
+        <div className="navigation-button" onClick={this.props.toggleNewBoardFormHandler}>
+          { this.newBoardLabel() }
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="navigation-container">
         <div className="navigation-button" onClick={this.props.showBoardListHandler}>
           { this.showBoardListLabel() }
         </div>
-        <div className="navigation-button" onClick={this.props.toggleNewBoardFormHandler}>
-          { this.newBoardLabel() }
-        </div>
+        { this.newBoard() }
         <div className="navigation-button" onClick={() => {}}>
           { this.cloneBoardLabel() }
         </div>
