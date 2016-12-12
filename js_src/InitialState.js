@@ -6,6 +6,7 @@ const InitialState = {
     showAddTagForm: false,
     showNewBoardForm: false,
     showCloneBoardForm: false,
+    showJumpForm: true,
     selectedTagId: null,
     addSnippetFormClass: "",
     addTagFormClass: "",

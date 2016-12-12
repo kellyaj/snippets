@@ -36,6 +36,7 @@ class BoardSelection extends Component {
           jumpToSlugHandler={this.props.jumpToSlugHandler}
           cloneBoardHandler={this.cloneBoard.bind(this)}
           toggleCloneBoardFormHandler={this.props.toggleCloneBoardFormHandler}
+          toggleJumpFormHandler={this.props.toggleJumpFormHandler}
         />
       </div>
     )
@@ -46,6 +47,7 @@ BoardSelection.propTypes = {
   uiData: React.PropTypes.object.isRequired,
   jumpToSlugHandler: React.PropTypes.func.isRequired,
   toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
+  toggleJumpFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default BoardSelection

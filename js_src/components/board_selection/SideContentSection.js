@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import NewBoardForm from './NewBoardForm'
-import BoardBySlugCard from './BoardBySlugCard'
+import JumpToBoardForm from './JumpToBoardForm'
 import CloneBoardForm from './CloneBoardForm'
 
 class SideContentSection extends Component {
@@ -11,12 +11,6 @@ class SideContentSection extends Component {
         <NewBoardForm
           createNewBoardHandler={this.props.createNewBoardHandler}
           toggleNewBoardFormHandler={this.props.toggleNewBoardFormHandler}
-        />
-      )
-    } else {
-      return (
-        <BoardBySlugCard
-          jumpToSlugHandler={this.props.jumpToSlugHandler}
         />
       )
     }
@@ -34,10 +28,23 @@ class SideContentSection extends Component {
     }
   }
 
+  displayJumpForm() {
+    const { showJumpForm } = this.props.uiData
+    if(showJumpForm) {
+      return (
+        <JumpToBoardForm
+          jumpToSlugHandler={this.props.jumpToSlugHandler}
+          toggleJumpFormHandler={this.props.toggleJumpFormHandler}
+        />
+      )
+    }
+  }
+
   render() {
     return (
       <div className="side-content-section-container">
         { this.displayNewBoardForm() }
+        { this.displayJumpForm() }
         { this.displayCloneBoardForm() }
       </div>
     )
@@ -49,6 +56,7 @@ SideContentSection.propTypes = {
   jumpToSlugHandler: React.PropTypes.func.isRequired,
   createNewBoardHandler: React.PropTypes.func.isRequired,
   toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
+  toggleJumpFormHandler: React.PropTypes.func.isRequired,
   cloneBoardHandler: React.PropTypes.func.isRequired,
 }
 

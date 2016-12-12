@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class BoardBySlugCard extends Component {
+class JumpToBoardForm extends Component {
 
   jumpToSlug() {
     const slug = this.refs.slugInput.value
@@ -10,6 +10,7 @@ class BoardBySlugCard extends Component {
   render() {
     return (
       <div className="board-by-slug-card-container">
+        <i className="fa fa-times board-close-x" onClick={this.props.toggleJumpFormHandler}></i>
         <h2>Jump to Board by Slug</h2>
         <div className="slug-form-field">
           slug: <input type="text" ref="slugInput"></input>
@@ -22,8 +23,9 @@ class BoardBySlugCard extends Component {
   }
 }
 
-BoardBySlugCard.propTypes = {
+JumpToBoardForm.propTypes = {
   jumpToSlugHandler: React.PropTypes.func.isRequired,
+  toggleJumpFormHandler: React.PropTypes.func.isRequired,
 }
 
-export default BoardBySlugCard
+export default JumpToBoardForm

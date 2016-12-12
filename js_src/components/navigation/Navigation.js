@@ -11,10 +11,19 @@ class Navigation extends Component {
   }
 
   cloneBoardLabel() {
-    return 'Clone Board'
+    const { showCloneBoardForm } = this.props.uiData
+    return showCloneBoardForm ? 'Cancel Clone' : 'Clone Board'
   }
 
-  newBoard() {
+  cloneBoardButton() {
+    return (
+      <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
+        { this.cloneBoardLabel() }
+      </div>
+    )
+  }
+
+  newBoardButton() {
     if(!this.props.selectedBoard) {
       return (
         <div className="navigation-button" onClick={this.props.toggleNewBoardFormHandler}>
@@ -24,16 +33,34 @@ class Navigation extends Component {
     }
   }
 
+  boardListButton() {
+    return (
+      <div className="navigation-button" onClick={this.props.showBoardListHandler}>
+        { this.showBoardListLabel() }
+      </div>
+    )
+  }
+
+  showJumpLabel() {
+    const { showJumpForm } = this.props.uiData
+    return showJumpForm ? 'Hide Jump Form' : 'Show Jump Form'
+  }
+
+  jumpToBoardButton() {
+    return (
+      <div className="navigation-button" onClick={this.props.toggleJumpFormHandler}>
+        { this.showJumpLabel() }
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="navigation-container">
-        <div className="navigation-button" onClick={this.props.showBoardListHandler}>
-          { this.showBoardListLabel() }
-        </div>
-        { this.newBoard() }
-        <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
-          { this.cloneBoardLabel() }
-        </div>
+        { this.boardListButton() }
+        { this.newBoardButton() }
+        { this.cloneBoardButton() }
+        { this.jumpToBoardButton() }
       </div>
     )
   }
@@ -44,6 +71,7 @@ Navigation.propTypes = {
   showBoardListHandler: React.PropTypes.func.isRequired,
   toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
   toggleCloneBoardFormHandler: React.PropTypes.func.isRequired,
+  toggleJumpFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default Navigation

@@ -14,6 +14,9 @@ import {
   SHOW_CLONE_BOARD_FORM,
   HIDE_CLONE_BOARD_FORM,
   CLONE_BOARD_SUCCESS,
+  SHOW_JUMP_FORM,
+  HIDE_JUMP_FORM,
+  JUMP_TO_SLUG_SUCCESS,
 } from '../actions/ActionTypes'
 
 import {
@@ -90,6 +93,18 @@ const uiDataReducer = (uiData = {}, action) => {
     case CLONE_BOARD_SUCCESS:
       return Object.assign({}, uiData, {
         showCloneBoardForm: false,
+      })
+    case SHOW_JUMP_FORM:
+      return Object.assign({}, uiData, {
+        showJumpForm: true,
+      })
+    case HIDE_JUMP_FORM:
+      return Object.assign({}, uiData, {
+        showJumpForm: false,
+      })
+    case JUMP_TO_SLUG_SUCCESS:
+      return Object.assign({}, uiData, {
+        showJumpForm: false,
       })
     default:
       return uiData

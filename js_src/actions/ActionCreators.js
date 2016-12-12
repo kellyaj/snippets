@@ -67,6 +67,8 @@ import {
   JUMP_TO_SLUG_REQUEST,
   JUMP_TO_SLUG_SUCCESS,
   JUMP_TO_SLUG_FAILURE,
+  SHOW_JUMP_FORM,
+  HIDE_JUMP_FORM,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -281,6 +283,14 @@ class ActionCreators {
         endpoint: `/boards/clone?slug=${slug}`,
         httpMethod: 'post',
       }
+    }
+  }
+
+  toggleJumpForm(showForm) {
+    if(showForm) {
+      return { type: SHOW_JUMP_FORM };
+    } else {
+      return { type: HIDE_JUMP_FORM };
     }
   }
 

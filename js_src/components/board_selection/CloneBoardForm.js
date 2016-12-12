@@ -25,6 +25,7 @@ class CloneBoardForm extends Component {
 
 CloneBoardForm.propTypes = {
   cloneBoardHandler: React.PropTypes.func.isRequired,
+  toggleCloneBoardFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default CloneBoardForm
