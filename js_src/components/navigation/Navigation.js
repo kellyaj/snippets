@@ -16,11 +16,13 @@ class Navigation extends Component {
   }
 
   cloneBoardButton() {
-    return (
-      <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
-        { this.cloneBoardLabel() }
-      </div>
-    )
+    if(!this.props.selectedBoard) {
+      return (
+        <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
+          { this.cloneBoardLabel() }
+        </div>
+      )
+    }
   }
 
   newBoardButton() {
@@ -47,11 +49,13 @@ class Navigation extends Component {
   }
 
   jumpToBoardButton() {
-    return (
-      <div className="navigation-button" onClick={this.props.toggleJumpFormHandler}>
-        { this.showJumpLabel() }
-      </div>
-    )
+    if(!this.props.selectedBoard) {
+      return (
+        <div className="navigation-button" onClick={this.props.toggleJumpFormHandler}>
+          { this.showJumpLabel() }
+        </div>
+      )
+    }
   }
 
   render() {
