@@ -57,6 +57,16 @@ import {
   DISPLAY_SLUG_REQUEST,
   DISPLAY_SLUG_SUCCESS,
   DISPLAY_SLUG_FAILURE,
+  SHOW_CLONE_BOARD_FORM,
+  HIDE_CLONE_BOARD_FORM,
+  CLONE_BOARD,
+  CLONE_BOARD_REQUEST,
+  CLONE_BOARD_SUCCESS,
+  CLONE_BOARD_FAILURE,
+  JUMP_TO_SLUG,
+  JUMP_TO_SLUG_REQUEST,
+  JUMP_TO_SLUG_SUCCESS,
+  JUMP_TO_SLUG_FAILURE,
 } from './ActionTypes'
 
 class ActionCreators {
@@ -242,6 +252,36 @@ class ActionCreators {
 
   clearSlug() {
     return { type: CLEAR_SLUG }
+  }
+
+  jumpToSlug(slug) {
+    return {
+      type: JUMP_TO_SLUG,
+      [CALL_API]: {
+        types: [ JUMP_TO_SLUG_REQUEST, JUMP_TO_SLUG_SUCCESS, JUMP_TO_SLUG_FAILURE ],
+        endpoint: `/boards/by_slug?slug=${slug}`,
+        httpMethod: 'get',
+      }
+    }
+  }
+
+  toggleCloneBoardForm(showForm) {
+    if(showForm) {
+      return { type: SHOW_CLONE_BOARD_FORM };
+    } else {
+      return { type: HIDE_CLONE_BOARD_FORM };
+    }
+  }
+
+  cloneBoard(slug) {
+    return {
+      type: CLONE_BOARD,
+      [CALL_API]: {
+        types: [ CLONE_BOARD_REQUEST, CLONE_BOARD_SUCCESS, CLONE_BOARD_FAILURE ],
+        endpoint: `/boards/clone?slug=${slug}`,
+        httpMethod: 'post',
+      }
+    }
   }
 
 }

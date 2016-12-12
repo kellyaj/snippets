@@ -31,12 +31,19 @@ class Navigation extends Component {
           { this.showBoardListLabel() }
         </div>
         { this.newBoard() }
-        <div className="navigation-button" onClick={() => {}}>
+        <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
           { this.cloneBoardLabel() }
         </div>
       </div>
     )
   }
+}
+
+Navigation.propTypes = {
+  uiData: React.PropTypes.object.isRequired,
+  showBoardListHandler: React.PropTypes.func.isRequired,
+  toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
+  toggleCloneBoardFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default Navigation

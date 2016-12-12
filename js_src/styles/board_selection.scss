@@ -63,3 +63,38 @@
   float: right;
   cursor: pointer;
 }
+
+.board-by-slug-card-container {
+  @include span-columns(3);
+  background-color: $light;
+  display: inline-block;
+  margin: 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  text-align: center;
+
+  .action-button {
+    margin-top: 1rem;
+  }
+}
+
+.slug-form-field {
+  text-align: center;
+}
+
+.clone-board-form-container {
+  @include span-columns(3);
+  background-color: $light;
+  display: inline-block;
+  margin: 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  text-align: center;
+
+  .action-button {
+    margin-top: 1rem;
+  }
+}
+
+.side-section-button {
+}

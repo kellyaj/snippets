@@ -23,6 +23,15 @@ class Application extends Component {
     return Store.dispatch(ActionCreators.toggleNewBoardForm(!showNewBoardForm))
   }
 
+  jumpToSlug(slug) {
+    return Store.dispatch(ActionCreators.jumpToSlug(slug))
+  }
+
+  toggleCloneBoardForm() {
+    const { showCloneBoardForm } = this.props.uiData
+    return Store.dispatch(ActionCreators.toggleCloneBoardForm(!showCloneBoardForm))
+  }
+
   renderPrimaryContent() {
     const { selectedBoard } = this.props
     if(selectedBoard) {
@@ -36,6 +45,7 @@ class Application extends Component {
         <BoardSelection
           {...this.props}
           toggleNewBoardFormHandler={this.toggleNewBoardForm.bind(this)}
+          jumpToSlugHandler={this.jumpToSlug.bind(this)}
         />
       )
     }
@@ -48,6 +58,7 @@ class Application extends Component {
           {...this.props}
           showBoardListHandler={this.showBoardList.bind(this)}
           toggleNewBoardFormHandler={this.toggleNewBoardForm.bind(this)}
+          toggleCloneBoardFormHandler={this.toggleCloneBoardForm.bind(this)}
         />
         { this.renderPrimaryContent() }
       </div>

@@ -11,6 +11,9 @@ import {
   SHOW_NEW_BOARD_FORM,
   HIDE_NEW_BOARD_FORM,
   CREATE_BOARD_SUCCESS,
+  SHOW_CLONE_BOARD_FORM,
+  HIDE_CLONE_BOARD_FORM,
+  CLONE_BOARD_SUCCESS,
 } from '../actions/ActionTypes'
 
 import {
@@ -75,6 +78,18 @@ const uiDataReducer = (uiData = {}, action) => {
     case CREATE_BOARD_SUCCESS:
       return Object.assign({}, uiData, {
         showNewBoardForm: false,
+      })
+    case SHOW_CLONE_BOARD_FORM:
+      return Object.assign({}, uiData, {
+        showCloneBoardForm: true,
+      })
+    case HIDE_CLONE_BOARD_FORM:
+      return Object.assign({}, uiData, {
+        showCloneBoardForm: false,
+      })
+    case CLONE_BOARD_SUCCESS:
+      return Object.assign({}, uiData, {
+        showCloneBoardForm: false,
       })
     default:
       return uiData

@@ -17,6 +17,10 @@ class BoardSelection extends Component {
     return Store.dispatch(ActionCreators.createBoard(boardData))
   }
 
+  cloneBoard(slug) {
+    return Store.dispatch(ActionCreators.cloneBoard(slug))
+  }
+
   render() {
     const { boards } = this.props
     return (
@@ -29,10 +33,19 @@ class BoardSelection extends Component {
           uiData={this.props.uiData}
           createNewBoardHandler={this.createNewBoard.bind(this)}
           toggleNewBoardFormHandler={this.props.toggleNewBoardFormHandler}
+          jumpToSlugHandler={this.props.jumpToSlugHandler}
+          cloneBoardHandler={this.cloneBoard.bind(this)}
+          toggleCloneBoardFormHandler={this.props.toggleCloneBoardFormHandler}
         />
       </div>
     )
   }
+}
+
+BoardSelection.propTypes = {
+  uiData: React.PropTypes.object.isRequired,
+  jumpToSlugHandler: React.PropTypes.func.isRequired,
+  toggleNewBoardFormHandler: React.PropTypes.func.isRequired,
 }
 
 export default BoardSelection
