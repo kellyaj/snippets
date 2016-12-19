@@ -17,7 +17,7 @@
 }
 
 .board-title-container {
-  @include span-columns(4)
+  @include span-columns(6)
   float: left;
 }
 
@@ -33,4 +33,9 @@
 .board-title-slug {
   font-weight: 400;
   font-size: 0.8rem;
+}
+
+.navheader-items {
+  @include span-columns(3)
+  float: right;
 }

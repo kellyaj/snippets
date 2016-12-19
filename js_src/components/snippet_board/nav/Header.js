@@ -25,16 +25,18 @@ class NavHeader extends Component {
     return (
       <div className="NavHeader-container">
         { this.boardTitle() }
-        <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
-          { this.addSnippetLabel() }
+        <div className="navheader-items">
+          <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
+            { this.addSnippetLabel() }
+          </div>
+          <div onClick={this.props.addTagHandler} className="NavHeader-button">
+            { this.addTagLabel() }
+          </div>
+          <FlashArea
+            uiData={this.props.uiData}
+            removeFlashMessage={this.props.removeFlashMessage}
+          />
         </div>
-        <div onClick={this.props.addTagHandler} className="NavHeader-button">
-          { this.addTagLabel() }
-        </div>
-        <FlashArea
-          uiData={this.props.uiData}
-          removeFlashMessage={this.props.removeFlashMessage}
-        />
       </div>
     );
   }
