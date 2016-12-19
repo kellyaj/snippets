@@ -6,12 +6,11 @@
 }
 
 .NavHeader-button {
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  color: black;
+  color: #ccc;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
   padding: 0.3em;
   margin: 0 0.4em;
   user-select: none;
@@ -28,7 +27,7 @@
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 3px $darkest;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .board-title-slug {
