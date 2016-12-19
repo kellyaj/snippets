@@ -7,7 +7,7 @@ class BoardSection extends Component {
       <div className="board-section">
         <BoardList
           boards={this.props.boards}
-          listTitle={"Public Boards"}
+          listTitle={"Open Intel"}
           selectBoardHandler={this.props.selectBoardHandler}
         />
       </div>

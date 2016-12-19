@@ -37,7 +37,7 @@ body {
 }
 
 .app-container {
-  @include outer-container;
+  @include span-columns(12);
   background-color: $dark;
   border: 1px solid #ccc;
 }

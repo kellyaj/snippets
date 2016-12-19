@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Navigation extends Component {
 
   showBoardListLabel() {
-    return 'Board List'
+    return 'Intel Board List'
   }
 
   newBoardLabel() {

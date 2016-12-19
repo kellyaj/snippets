@@ -24,8 +24,9 @@
 
 .board-title-name {
   color: $card-color;
-  font-weight: 900;
+  font-family: 'Droid Sans Mono', monospace;
   font-size: 3rem;
+  font-weight: 900;
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 3px $darkest;
 }
