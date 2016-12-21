@@ -1,17 +1,34 @@
 .TagForm-container {
   @include span-columns(3);
-
   background-color: $light;
   border: 1px solid #000;
+  color: #000;
   float: right;
   margin: 1rem;
   padding: 0 1rem 1rem 1rem;
+  position: absolute;
   transform: translateY(-100%);
   user-select: none;
+  z-index: 4;
+  top: 20%;
+  left: 40%;
+
+  h2 {
+    text-align: center;
+  }
+
+  input {
+    float: right;
+    height: 1.5rem;
+    margin-right: 5rem;
+    width: 50%;
+  }
 }
 
 .tag-form-field {
   margin-bottom: 1rem;
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
 .tag-form-menu {

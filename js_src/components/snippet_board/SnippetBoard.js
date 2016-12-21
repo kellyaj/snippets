@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import NavHeader from './nav/Header'
 import TagList from './tag_list/TagList'
 import SnippetList from './snippet_list/SnippetList'
-import BoardActionMenu from './action_menu/BoardActionMenu'
 import Store from '../../store/Store'
 import ActionCreators from '../../actions/ActionCreators'
 import '../../styles/app.scss'
@@ -54,24 +53,17 @@ class SnippetBoard extends Component {
     return (
       <div className="SnippetBoard-container">
         <NavHeader
-          uiData={this.props.uiData}
-          toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
-          addTagHandler={this.toggleTagFormHandler.bind(this)}
-          removeFlashMessage={this.removeFlashMessage.bind(this)}
-          boardName={this.props.selectedBoard.name}
-          boardSlug={this.props.selectedBoard.slug}
-        />
-        <BoardActionMenu
-          uiData={this.props.uiData}
-          tags={this.props.tags}
-          newSnippet={this.props.newSnippet}
+          { ...this.props }
           addTagHandler={this.addTagHandler.bind(this)}
-          toggleTagFormHandler={this.toggleTagFormHandler.bind(this)}
           addSnippetHandler={this.addSnippetHandler.bind(this)}
           addTagToNewSnippet={this.addTagToNewSnippetHandler.bind(this)}
           removeTagFromNewSnippet={this.removeTagFromNewSnippetHandler.bind(this)}
           toggleSnippetFormHandler={this.toggleSnippetFormHandler.bind(this)}
-          selectedBoard={this.props.selectedBoard}
+          toggleTagFormHandler={this.toggleTagFormHandler.bind(this)}
+          addTagHandler={this.toggleTagFormHandler.bind(this)}
+          removeFlashMessage={this.removeFlashMessage.bind(this)}
+          boardName={this.props.selectedBoard.name}
+          boardSlug={this.props.selectedBoard.slug}
         />
         <TagList
           tags={this.props.tags}

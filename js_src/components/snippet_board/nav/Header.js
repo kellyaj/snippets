@@ -1,5 +1,6 @@
-import FlashArea from '../flash_area/FlashArea'
 import React, { Component } from 'react';
+import FlashArea from '../flash_area/FlashArea'
+import BoardActionMenu from '../action_menu/BoardActionMenu'
 
 class NavHeader extends Component {
 
@@ -25,6 +26,22 @@ class NavHeader extends Component {
     return (
       <div className="NavHeader-container">
         { this.boardTitle() }
+        <FlashArea
+          uiData={this.props.uiData}
+          removeFlashMessage={this.props.removeFlashMessage}
+        />
+        <BoardActionMenu
+          uiData={this.props.uiData}
+          tags={this.props.tags}
+          newSnippet={this.props.newSnippet}
+          addTagHandler={this.props.addTagHandler}
+          toggleTagFormHandler={this.props.toggleTagFormHandler}
+          addSnippetHandler={this.props.addSnippetHandler}
+          addTagToNewSnippet={this.props.addTagToNewSnippet}
+          removeTagFromNewSnippet={this.props.removeTagFromNewSnippet}
+          toggleSnippetFormHandler={this.props.toggleSnippetFormHandler}
+          selectedBoard={this.props.selectedBoard}
+        />
         <div className="navheader-items">
           <div onClick={this.props.toggleSnippetFormHandler} className="NavHeader-button">
             { this.addSnippetLabel() }
@@ -32,10 +49,6 @@ class NavHeader extends Component {
           <div onClick={this.props.addTagHandler} className="NavHeader-button">
             { this.addTagLabel() }
           </div>
-          <FlashArea
-            uiData={this.props.uiData}
-            removeFlashMessage={this.props.removeFlashMessage}
-          />
         </div>
       </div>
     );
