@@ -1,6 +1,5 @@
 .tutorial-container {
   @include span-columns(12);
-  margin: 1rem;
 }
 
 .tutorial-header {
@@ -23,12 +22,11 @@
   color: $light;
   margin-top: 10rem;
   font-size: 1.5rem;
+  padding: 1rem;
 }
 
 .tutorial-steps-container {
   @include span-columns(12);
-
-  margin: 1rem;
 }
 
 .tutorial-step {
@@ -109,4 +107,12 @@
 
 .app-component-name {
   color: #9FAA5E;
+}
+
+.step-aside {
+  color: $light;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-shadow: 1px 1px 1px #000;
 }
