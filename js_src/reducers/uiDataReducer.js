@@ -21,6 +21,7 @@ import {
   HIDE_TUTORIAL_CARD,
   DISPLAY_TUTORIAL,
   HIDE_TUTORIAL,
+  SHOW_BOARD_LIST,
 } from '../actions/ActionTypes'
 
 import {
@@ -123,6 +124,10 @@ const uiDataReducer = (uiData = {}, action) => {
         showTutorial: true,
       })
     case HIDE_TUTORIAL:
+      return Object.assign({}, uiData, {
+        showTutorial: false,
+      })
+    case SHOW_BOARD_LIST:
       return Object.assign({}, uiData, {
         showTutorial: false,
       })

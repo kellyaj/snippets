@@ -16,7 +16,8 @@ class Navigation extends Component {
   }
 
   cloneBoardButton() {
-    if(!this.props.selectedBoard) {
+    const { showTutorial } = this.props.uiData
+    if(!this.props.selectedBoard && !showTutorial) {
       return (
         <div className="navigation-button" onClick={this.props.toggleCloneBoardFormHandler}>
           { this.cloneBoardLabel() }
@@ -26,7 +27,8 @@ class Navigation extends Component {
   }
 
   newBoardButton() {
-    if(!this.props.selectedBoard) {
+    const { showTutorial } = this.props.uiData
+    if(!this.props.selectedBoard && !showTutorial) {
       return (
         <div className="navigation-button" onClick={this.props.toggleNewBoardFormHandler}>
           { this.newBoardLabel() }
@@ -49,7 +51,8 @@ class Navigation extends Component {
   }
 
   jumpToBoardButton() {
-    if(!this.props.selectedBoard) {
+    const { showTutorial } = this.props.uiData
+    if(!this.props.selectedBoard && !showTutorial) {
       return (
         <div className="navigation-button" onClick={this.props.toggleJumpFormHandler}>
           { this.showJumpLabel() }
