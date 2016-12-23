@@ -69,6 +69,10 @@ import {
   JUMP_TO_SLUG_FAILURE,
   SHOW_JUMP_FORM,
   HIDE_JUMP_FORM,
+  SHOW_TUTORIAL_CARD,
+  HIDE_TUTORIAL_CARD,
+  DISPLAY_TUTORIAL,
+  HIDE_TUTORIAL
 } from './ActionTypes'
 
 class ActionCreators {
@@ -257,6 +261,14 @@ class ActionCreators {
     }
   }
 
+  displayTutorial() {
+    return { type: DISPLAY_TUTORIAL }
+  }
+
+  hideTutorial() {
+    return { type: HIDE_TUTORIAL }
+  }
+
   toggleAction(showForm, showClass, hideClass) {
     return showForm ? { type: showClass } : { type: hideClass }
   }
@@ -279,6 +291,10 @@ class ActionCreators {
 
   toggleSnippetForm(showForm) {
     return this.toggleAction(showForm, SHOW_ADD_SNIPPET_FORM, HIDE_ADD_SNIPPET_FORM)
+  }
+
+  toggleShowTutorialCard(showForm) {
+    return this.toggleAction(showForm, SHOW_TUTORIAL_CARD, HIDE_TUTORIAL_CARD)
   }
 
 }

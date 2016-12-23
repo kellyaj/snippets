@@ -99,3 +99,19 @@
     margin-top: 1rem;
   }
 }
+
+.tutorial-card-container {
+  @include span-columns(3);
+  background-color: $light;
+  border: 1px solid $darkest;
+  display: inline-block;
+  font-family: 'Droid Sans Mono', monospace;
+  margin: 1rem 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+  text-align: center;
+
+  .action-button {
+    margin: 0.5rem 5rem;
+  }
+}

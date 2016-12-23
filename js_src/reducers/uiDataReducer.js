@@ -17,6 +17,10 @@ import {
   SHOW_JUMP_FORM,
   HIDE_JUMP_FORM,
   JUMP_TO_SLUG_SUCCESS,
+  SHOW_TUTORIAL_CARD,
+  HIDE_TUTORIAL_CARD,
+  DISPLAY_TUTORIAL,
+  HIDE_TUTORIAL,
 } from '../actions/ActionTypes'
 
 import {
@@ -105,6 +109,22 @@ const uiDataReducer = (uiData = {}, action) => {
     case JUMP_TO_SLUG_SUCCESS:
       return Object.assign({}, uiData, {
         showJumpForm: false,
+      })
+    case SHOW_TUTORIAL_CARD:
+      return Object.assign({}, uiData, {
+        showTutorialCard: true,
+      })
+    case HIDE_TUTORIAL_CARD:
+      return Object.assign({}, uiData, {
+        showTutorialCard: false,
+      })
+    case DISPLAY_TUTORIAL:
+      return Object.assign({}, uiData, {
+        showTutorial: true,
+      })
+    case HIDE_TUTORIAL:
+      return Object.assign({}, uiData, {
+        showTutorial: false,
       })
     default:
       return uiData

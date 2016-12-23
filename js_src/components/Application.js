@@ -37,13 +37,31 @@ class Application extends Component {
     return Store.dispatch(ActionCreators.toggleJumpForm(!showJumpForm))
   }
 
+  toggleShowTutorialCard() {
+    const { showTutorialCard } = this.props.uiData
+    return Store.dispatch(ActionCreators.toggleShowTutorialCard(!showTutorialCard))
+  }
+
+  displayTutorial() {
+    return Store.dispatch(ActionCreators.displayTutorial())
+  }
+
+  hideTutorial() {
+    return Store.dispatch(ActionCreators.hideTutorial())
+  }
+
   renderPrimaryContent() {
     const { selectedBoard } = this.props
+    const { showTutorial } = this.props.uiData
     if(selectedBoard) {
       return (
         <SnippetBoard
           {...this.props}
         />
+      )
+    } else if(showTutorial) {
+      return (
+        <h2>im the tutorial</h2>
       )
     } else {
       return (
@@ -53,6 +71,8 @@ class Application extends Component {
           jumpToSlugHandler={this.jumpToSlug.bind(this)}
           toggleJumpFormHandler={this.toggleJumpForm.bind(this)}
           toggleCloneBoardFormHandler={this.toggleCloneBoardForm.bind(this)}
+          toggleShowTutorialHandler={this.toggleShowTutorialCard.bind(this)}
+          displayTutorialHandler={this.displayTutorial.bind(this)}
         />
       )
     }

@@ -37,6 +37,8 @@ class BoardSelection extends Component {
           cloneBoardHandler={this.cloneBoard.bind(this)}
           toggleCloneBoardFormHandler={this.props.toggleCloneBoardFormHandler}
           toggleJumpFormHandler={this.props.toggleJumpFormHandler}
+          toggleShowTutorialHandler={this.props.toggleShowTutorialHandler}
+          displayTutorialHandler={this.props.displayTutorialHandler}
         />
       </div>
     )

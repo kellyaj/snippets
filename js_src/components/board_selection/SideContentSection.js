@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import NewBoardForm from './NewBoardForm'
 import JumpToBoardForm from './JumpToBoardForm'
 import CloneBoardForm from './CloneBoardForm'
+import TutorialCard from './TutorialCard'
 
 class SideContentSection extends Component {
   displayNewBoardForm() {
@@ -40,12 +41,25 @@ class SideContentSection extends Component {
     }
   }
 
+  displayTutorialCard() {
+    const { showTutorialCard } = this.props.uiData
+    if(showTutorialCard) {
+      return (
+        <TutorialCard
+          toggleShowTutorialHandler={this.props.toggleShowTutorialHandler}
+          displayTutorialHandler={this.props.displayTutorialHandler}
+        />
+      )
+    }
+  }
+
   render() {
     return (
       <div className="side-content-section-container">
         { this.displayNewBoardForm() }
         { this.displayJumpForm() }
         { this.displayCloneBoardForm() }
+        { this.displayTutorialCard() }
       </div>
     )
   }
