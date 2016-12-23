@@ -3,6 +3,7 @@ import Store from '../store/Store'
 import ActionCreators from '../actions/ActionCreators'
 import SnippetBoard from './snippet_board/SnippetBoard'
 import BoardSelection from './board_selection/BoardSelection'
+import Tutorial from './tutorial/Tutorial'
 import Navigation from './navigation/Navigation'
 
 class Application extends Component {
@@ -61,7 +62,9 @@ class Application extends Component {
       )
     } else if(showTutorial) {
       return (
-        <h2>im the tutorial</h2>
+        <Tutorial
+          hideTutorialHandler={this.hideTutorial.bind(this)}
+        />
       )
     } else {
       return (
