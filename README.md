@@ -1,3 +1,7 @@
+Snippets
+===
+This is the open source version of [sysCommando](http://syscommando.com), which is a tool for collecting and organizing command line snippets.
+
 Initial Setup
 ===
 - Install ruby gems: `bundle install`
