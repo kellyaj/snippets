@@ -1,6 +1,6 @@
 Snippets
 ===
-This is the open source version of [sysCommando](http://syscommando.com), which is a tool for collecting and organizing command line snippets.
+This is the open source version of [sysCommando](http://syscommando.com), which is a tool for collecting and organizing command line snippets. This repository may or may not receive backported features from the primary sysCommando project.
 
 Initial Setup
 ===
